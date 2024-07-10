@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct RootView: View {
+    @State private var selectionItem = 0
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView(selection: $selectionItem){
+            MainView()
+                .tabItem {
+                    Label("Başlangıç", systemImage: "house")
+                }
+                .tag(0)
+            
+            ResultView()
+                .tabItem {
+                    Label("Hesaplamalar", systemImage: "arrow.counterclockwise.circle")
+                }
+                .tag(1)
+        }
     }
 }
 
