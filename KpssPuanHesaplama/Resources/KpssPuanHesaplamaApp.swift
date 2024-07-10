@@ -9,6 +9,20 @@ import SwiftUI
 
 @main
 struct KpssPuanHesaplamaApp: App {
+    
+    init() {
+        
+        let appearanceNav = UINavigationBarAppearance()
+        appearanceNav.configureWithOpaqueBackground()
+        UINavigationBar.appearance().standardAppearance = appearanceNav
+        UINavigationBar.appearance().scrollEdgeAppearance = appearanceNav
+        
+        let appearanceTab = UITabBarAppearance()
+        appearanceTab.configureWithOpaqueBackground()
+        UITabBar.appearance().scrollEdgeAppearance = appearanceTab
+        UITabBar.appearance().standardAppearance = appearanceTab
+    }
+    
     var body: some Scene {
         WindowGroup {
             RootView()
