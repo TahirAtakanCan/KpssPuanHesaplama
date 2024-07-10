@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		FB40C0302C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C02F2C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift */; };
-		FB40C0322C3EAE300040FDF2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C0312C3EAE300040FDF2 /* ContentView.swift */; };
 		FB40C0342C3EAE310040FDF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB40C0332C3EAE310040FDF2 /* Assets.xcassets */; };
 		FB40C0372C3EAE310040FDF2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB40C0362C3EAE310040FDF2 /* Preview Assets.xcassets */; };
+		FB40C03E2C3EB35E0040FDF2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C03D2C3EB35E0040FDF2 /* RootView.swift */; };
+		FB40C0422C3EB3DB0040FDF2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C0412C3EB3DB0040FDF2 /* MainView.swift */; };
+		FB40C0442C3EB3E80040FDF2 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C0432C3EB3E80040FDF2 /* ResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FB40C02C2C3EAE300040FDF2 /* KpssPuanHesaplama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KpssPuanHesaplama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB40C02F2C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KpssPuanHesaplamaApp.swift; sourceTree = "<group>"; };
-		FB40C0312C3EAE300040FDF2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FB40C0332C3EAE310040FDF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB40C0362C3EAE310040FDF2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FB40C03D2C3EB35E0040FDF2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		FB40C0412C3EB3DB0040FDF2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		FB40C0432C3EB3E80040FDF2 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +55,8 @@
 		FB40C02E2C3EAE300040FDF2 /* KpssPuanHesaplama */ = {
 			isa = PBXGroup;
 			children = (
-				FB40C02F2C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift */,
-				FB40C0312C3EAE300040FDF2 /* ContentView.swift */,
-				FB40C0332C3EAE310040FDF2 /* Assets.xcassets */,
+				FB40C0402C3EB3AE0040FDF2 /* Views */,
+				FB40C03F2C3EB39E0040FDF2 /* Resources */,
 				FB40C0352C3EAE310040FDF2 /* Preview Content */,
 			);
 			path = KpssPuanHesaplama;
@@ -65,6 +68,25 @@
 				FB40C0362C3EAE310040FDF2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FB40C03F2C3EB39E0040FDF2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FB40C02F2C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift */,
+				FB40C0332C3EAE310040FDF2 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FB40C0402C3EB3AE0040FDF2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FB40C03D2C3EB35E0040FDF2 /* RootView.swift */,
+				FB40C0412C3EB3DB0040FDF2 /* MainView.swift */,
+				FB40C0432C3EB3E80040FDF2 /* ResultView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +159,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB40C0322C3EAE300040FDF2 /* ContentView.swift in Sources */,
+				FB40C03E2C3EB35E0040FDF2 /* RootView.swift in Sources */,
+				FB40C0442C3EB3E80040FDF2 /* ResultView.swift in Sources */,
+				FB40C0422C3EB3DB0040FDF2 /* MainView.swift in Sources */,
 				FB40C0302C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +299,7 @@
 				DEVELOPMENT_TEAM = AAS9DNLG6G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Puan Hesaplama";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +329,7 @@
 				DEVELOPMENT_TEAM = AAS9DNLG6G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Puan Hesaplama";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
