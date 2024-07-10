@@ -13,6 +13,11 @@
 		FB40C03E2C3EB35E0040FDF2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C03D2C3EB35E0040FDF2 /* RootView.swift */; };
 		FB40C0422C3EB3DB0040FDF2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C0412C3EB3DB0040FDF2 /* MainView.swift */; };
 		FB40C0442C3EB3E80040FDF2 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C0432C3EB3E80040FDF2 /* ResultView.swift */; };
+		FB40C0462C3EC5180040FDF2 /* OrtaogretimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C0452C3EC5180040FDF2 /* OrtaogretimView.swift */; };
+		FB40C0482C3EC5250040FDF2 /* OnLisansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C0472C3EC5250040FDF2 /* OnLisansView.swift */; };
+		FB40C04A2C3EC5310040FDF2 /* LisansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C0492C3EC5310040FDF2 /* LisansView.swift */; };
+		FB40C04C2C3EC5400040FDF2 /* EgitimBilimleriView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C04B2C3EC5400040FDF2 /* EgitimBilimleriView.swift */; };
+		FB40C04E2C3EC54F0040FDF2 /* OABTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C04D2C3EC54F0040FDF2 /* OABTView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,11 @@
 		FB40C03D2C3EB35E0040FDF2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FB40C0412C3EB3DB0040FDF2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FB40C0432C3EB3E80040FDF2 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		FB40C0452C3EC5180040FDF2 /* OrtaogretimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrtaogretimView.swift; sourceTree = "<group>"; };
+		FB40C0472C3EC5250040FDF2 /* OnLisansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnLisansView.swift; sourceTree = "<group>"; };
+		FB40C0492C3EC5310040FDF2 /* LisansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LisansView.swift; sourceTree = "<group>"; };
+		FB40C04B2C3EC5400040FDF2 /* EgitimBilimleriView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EgitimBilimleriView.swift; sourceTree = "<group>"; };
+		FB40C04D2C3EC54F0040FDF2 /* OABTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OABTView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +95,11 @@
 				FB40C03D2C3EB35E0040FDF2 /* RootView.swift */,
 				FB40C0412C3EB3DB0040FDF2 /* MainView.swift */,
 				FB40C0432C3EB3E80040FDF2 /* ResultView.swift */,
+				FB40C0452C3EC5180040FDF2 /* OrtaogretimView.swift */,
+				FB40C0472C3EC5250040FDF2 /* OnLisansView.swift */,
+				FB40C0492C3EC5310040FDF2 /* LisansView.swift */,
+				FB40C04B2C3EC5400040FDF2 /* EgitimBilimleriView.swift */,
+				FB40C04D2C3EC54F0040FDF2 /* OABTView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -126,11 +141,11 @@
 			};
 			buildConfigurationList = FB40C0272C3EAE300040FDF2 /* Build configuration list for PBXProject "KpssPuanHesaplama" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = tr;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				tr,
 			);
 			mainGroup = FB40C0232C3EAE300040FDF2;
 			productRefGroup = FB40C02D2C3EAE300040FDF2 /* Products */;
@@ -159,10 +174,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB40C04A2C3EC5310040FDF2 /* LisansView.swift in Sources */,
 				FB40C03E2C3EB35E0040FDF2 /* RootView.swift in Sources */,
+				FB40C0462C3EC5180040FDF2 /* OrtaogretimView.swift in Sources */,
 				FB40C0442C3EB3E80040FDF2 /* ResultView.swift in Sources */,
 				FB40C0422C3EB3DB0040FDF2 /* MainView.swift in Sources */,
 				FB40C0302C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift in Sources */,
+				FB40C0482C3EC5250040FDF2 /* OnLisansView.swift in Sources */,
+				FB40C04C2C3EC5400040FDF2 /* EgitimBilimleriView.swift in Sources */,
+				FB40C04E2C3EC54F0040FDF2 /* OABTView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
