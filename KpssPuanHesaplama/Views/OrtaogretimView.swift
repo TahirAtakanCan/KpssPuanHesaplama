@@ -46,19 +46,12 @@ struct OrtaogretimView: View {
                 Section {
                     Text("KPSS Puanı: \(sonuc)")
                     
-                    Button(action: {
-                        
-                    }, label: {
-                        Text("Hesapla")
-                            .bold()
-                            .font(.title2)
-                            .padding(8)
-                            .frame(maxWidth: .infinity)
-                    })
-                    .buttonStyle(.borderedProminent)
-                    .tint(.main)
+                    HesaplaButton(title: "Hesapla") {
+                        print("Hesaplama İşlemleri")
+                    }
                     
-                } header: {
+                    
+                    } header: {
                     Text("Sonuç")
                         .textCase(.none)
                 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB3909642C47EE2A009698D2 /* HesaplaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3909632C47EE2A009698D2 /* HesaplaButton.swift */; };
 		FB40C0302C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C02F2C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift */; };
 		FB40C0342C3EAE310040FDF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB40C0332C3EAE310040FDF2 /* Assets.xcassets */; };
 		FB40C0372C3EAE310040FDF2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB40C0362C3EAE310040FDF2 /* Preview Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB3909632C47EE2A009698D2 /* HesaplaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HesaplaButton.swift; sourceTree = "<group>"; };
 		FB40C02C2C3EAE300040FDF2 /* KpssPuanHesaplama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KpssPuanHesaplama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB40C02F2C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KpssPuanHesaplamaApp.swift; sourceTree = "<group>"; };
 		FB40C0332C3EAE310040FDF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB3909622C47EDFF009698D2 /* SharedViews */ = {
+			isa = PBXGroup;
+			children = (
+				FB3909632C47EE2A009698D2 /* HesaplaButton.swift */,
+			);
+			path = SharedViews;
+			sourceTree = "<group>";
+		};
 		FB40C0232C3EAE300040FDF2 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +102,7 @@
 		FB40C0402C3EB3AE0040FDF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FB3909622C47EDFF009698D2 /* SharedViews */,
 				FB40C03D2C3EB35E0040FDF2 /* RootView.swift */,
 				FB40C0412C3EB3DB0040FDF2 /* MainView.swift */,
 				FB40C0432C3EB3E80040FDF2 /* ResultView.swift */,
@@ -174,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB3909642C47EE2A009698D2 /* HesaplaButton.swift in Sources */,
 				FB40C04A2C3EC5310040FDF2 /* LisansView.swift in Sources */,
 				FB40C03E2C3EB35E0040FDF2 /* RootView.swift in Sources */,
 				FB40C0462C3EC5180040FDF2 /* OrtaogretimView.swift in Sources */,
