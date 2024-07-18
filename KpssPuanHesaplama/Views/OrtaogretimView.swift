@@ -15,7 +15,7 @@ struct OrtaogretimView: View {
     @State private var gkDogruSayisi:Double = 30
     @State private var gkYanlisSayisi:Double = 0
     
-    @State private var sonuc = 0
+    @State private var sonuc:Double = 0
     
     var body: some View {
         VStack {
@@ -56,10 +56,16 @@ struct OrtaogretimView: View {
                 }
                 
                 Section {
-                    Text("KPSS Puanı: \(sonuc)")
+                    Text("KPSS Puanı: \(sonuc, specifier: "%.3f")")
                     
                     HesaplaButton(title: "Hesapla") {
-                        print("Hesaplama İşlemleri")
+                        
+                        let gkNet = gkDogruSayisi - (gkYanlisSayisi / 4)
+                        let gyNet = gyDogruSayisi - (gyYanlisSayisi / 4)
+                        
+                        sonuc = 55.839 + gyNet * 0.348 + gkNet * 0.431
+                        
+                        //print("Hesaplama İşlemleri")
                     }
                     //.disabled(formKontrol)
                     
