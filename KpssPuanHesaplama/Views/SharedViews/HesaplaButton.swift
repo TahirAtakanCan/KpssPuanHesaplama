@@ -16,10 +16,9 @@ struct HesaplaButton: View {
         Button(action: {
             action()
         }, label: {
-            Text(title)
-                .bold()
-                .font(.title2)
-                .padding(8)
+            Label(title, systemImage: "plus.forwardslash.minus")
+                .font(.title)
+                .foregroundStyle(.white)
                 .frame(maxWidth: .infinity)
         })
         .buttonStyle(.borderedProminent)
