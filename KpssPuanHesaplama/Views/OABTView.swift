@@ -135,38 +135,6 @@ struct OABTView: View {
                         .sensoryFeedback(.selection, trigger: oabtYanlisSayisi)
                         .bold()
                     
-                } header: {
-                    Text("Eğitim Bilimleri")
-                        .textCase(.none)
-                } footer: {
-                    if(ebDogruSayisi + ebYanlisSayisi > 75) {
-                        Text("Toplam doğru ve yanlış sayıları 75'i geçemez.")
-                            .foregroundStyle(.red)
-                    }
-                }
-                
-                Section {
-                    VStack(alignment: .leading) {
-                        Text("2023 P3(Memur) Puanı: \(sonuc2023, specifier: "%.3f")")
-                            .bold()
-                        
-                        Text("2023 P310(Öğretmen) Puanı: \(sonucEB2023, specifier: "%.3f")")
-                            .bold()
-                    }
-                    
-                    VStack(alignment: .leading) {
-                        Text("2022 P3(Memur) Puanı: \(sonuc2022, specifier: "%.3f")")
-                            .bold()
-                        
-                        Text("2022 P10(Öğretmen) Puanı: \(sonucEB2022, specifier: "%.3f")")
-                            .bold()
-                        
-                        Text("2022 P121(Alan) Puanı: \(sonucOABT2022, specifier: "%.3f")")
-                            .bold()
-                    }
-                        //.transition(.slide)
-                        //.animation(.default, value: sonuc)
-                    
                     HesaplaButton(title: "Hesapla") {
                         
                         let gkNet = gkDogruSayisi - (gkYanlisSayisi / 4)
@@ -180,16 +148,24 @@ struct OABTView: View {
         
                         sonuc2023 = 51.209 + gyNet * 0.537 + gkNet * 0.418
                         sonucEB2023 = 40.405 + gyNet * 0.3493 + gkNet * 0.3672 + ebNet * 0.37145
+                        isShowingSheet.toggle()
                         
                     }
                     //.disabled(formKontrol)
                     .sensoryFeedback(.success, trigger: sonuc2022)
-                    } header: {
-                    Text("Sonuç")
+                    .sheet(isPresented: $isShowingSheet) {
+                        SonucView(sonuc2022: sonuc2022, sonucEB2022: sonucEB2022, sonucOABT2022: sonucOABT2022, sonuc2023: sonuc2023, sonucEB2023: sonucEB2023, sonucOABT2023: nil)
+                    }
+                    
+                } header: {
+                    Text("Eğitim Bilimleri")
                         .textCase(.none)
+                } footer: {
+                    if(ebDogruSayisi + ebYanlisSayisi > 75) {
+                        Text("Toplam doğru ve yanlış sayıları 75'i geçemez.")
+                            .foregroundStyle(.red)
+                    }
                 }
-                
-                
             }
             
         }
