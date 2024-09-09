@@ -23,10 +23,14 @@ struct OrtaogretimView: View {
             Form {
                 
                 Section {
-                    Stepper("Doğru Sayısı: \(gyDogruSayisi, specifier: "%.0f")", value: $gyDogruSayisi, in: 0...(60 - gyYanlisSayisi))
+                    Stepper(value: $gyDogruSayisi, in: 1...60){
+                        Label("Doğru Sayısı: \(gyDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
+                    }
                         .sensoryFeedback(.selection, trigger: gyDogruSayisi)
                         .bold()
-                    Stepper("Yanlış Sayısı: \(gyYanlisSayisi, specifier: "%.0f")", value: $gyYanlisSayisi, in: 0...(60 - gyDogruSayisi))
+                    Stepper(value: $gyYanlisSayisi, in: 1...60){
+                        Label("Yanlış Sayısı: \(gyYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
+                    }
                         .sensoryFeedback(.selection, trigger: gyYanlisSayisi)
                         .bold()
                     
