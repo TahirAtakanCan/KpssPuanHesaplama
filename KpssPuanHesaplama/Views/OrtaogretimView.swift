@@ -76,7 +76,7 @@ struct OrtaogretimView: View {
                         
                     }
                     //.disabled(formKontrol)
-                    
+                    .sensoryFeedback(.success, trigger: sonuc)
                     } header: {
                     Text("Sonuç")
                         .textCase(.none)

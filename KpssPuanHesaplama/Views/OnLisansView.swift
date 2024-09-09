@@ -8,14 +8,96 @@
 import SwiftUI
 
 struct OnLisansView: View {
+    
+    @State private var gyDogruSayisi:Double = 30
+    @State private var gyYanlisSayisi:Double = 0
+    
+    @State private var gkDogruSayisi:Double = 30
+    @State private var gkYanlisSayisi:Double = 0
+    
+    @State private var sonuc:Double = 0
+    
     var body: some View {
         VStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            
+            Form {
+                
+                Section {
+                    Stepper("Doğru Sayısı: \(gyDogruSayisi, specifier: "%.0f")", value: $gyDogruSayisi, in: 0...(60 - gyYanlisSayisi))
+                        .sensoryFeedback(.selection, trigger: gyDogruSayisi)
+                        .bold()
+                    Stepper("Yanlış Sayısı: \(gyYanlisSayisi, specifier: "%.0f")", value: $gyYanlisSayisi, in: 0...(60 - gyDogruSayisi))
+                        .sensoryFeedback(.selection, trigger: gyYanlisSayisi)
+                        .bold()
+                    
+                } header: {
+                    Text("Genel Yetenek")
+                        .textCase(.none)
+                } footer: {
+                    if(gyDogruSayisi + gyYanlisSayisi > 60) {
+                        Text("Toplam doğru ve yanlış sayıları 60'ı geçemez.")
+                            .foregroundStyle(.red)
+                    }
+                }
+                
+                
+                Section {
+                    Stepper("Doğru Sayısı: \(gkDogruSayisi, specifier: "%.0f")", value: $gkDogruSayisi, in: 0...(60 - gkYanlisSayisi))
+                        .sensoryFeedback(.selection, trigger: gkDogruSayisi)
+                        .bold()
+                    Stepper("Yanlış Sayısı: \(gkYanlisSayisi, specifier: "%.0f")", value: $gkYanlisSayisi, in: 0...(60 - gkDogruSayisi))
+                        .sensoryFeedback(.selection, trigger: gkYanlisSayisi)
+                        .bold()
+                    
+                } header: {
+                    Text("Genel Kültür")
+                        .textCase(.none)
+                } footer: {
+                    if(gkDogruSayisi + gkYanlisSayisi > 60) {
+                        Text("Toplam doğru ve yanlış sayıları 60'ı geçemez.")
+                            .foregroundStyle(.red)
+                    }
+                }
+                
+                Section {
+                    Text("KPSS Puanı: \(sonuc, specifier: "%.3f")")
+                        .bold()
+                        //.transition(.slide)
+                        //.animation(.default, value: sonuc)
+                    
+                    HesaplaButton(title: "Hesapla") {
+                        
+                        let gkNet = gkDogruSayisi - (gkYanlisSayisi / 4)
+                        let gyNet = gyDogruSayisi - (gyYanlisSayisi / 4)
+                        
+                        withAnimation {
+                            sonuc = (53.816 + gyNet * 0.43 + gkNet * 0.397)
+                        }
+                        
+                    }
+                    //.disabled(formKontrol)
+                    .sensoryFeedback(.success, trigger: sonuc)
+                    } header: {
+                    Text("Sonuç")
+                        .textCase(.none)
+                }
+                
+                
+            }
+            
         }
-        .navigationTitle("Önlisans")
+        .navigationTitle("OnLisans")
+    }
+    
+    var formKontrol: Bool {
+        if((gyDogruSayisi + gyYanlisSayisi) > 60 || (gkDogruSayisi + gkYanlisSayisi) > 60) {
+            return true
+        }
+        return false
     }
 }
 
 #Preview {
-    OnLisansView()
+   OnLisansView()
 }
+
