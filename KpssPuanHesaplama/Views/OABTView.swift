@@ -70,6 +70,7 @@ struct OABTView: View {
                 } header: {
                     Text("Genel Yetenek")
                         .textCase(.none)
+                        .foregroundColor(.main)
                 } footer: {
                     if(gyDogruSayisi + gyYanlisSayisi > 60) {
                         Text("Toplam doğru ve yanlış sayıları 60'ı geçemez.")
@@ -89,6 +90,7 @@ struct OABTView: View {
                 } header: {
                     Text("Genel Kültür")
                         .textCase(.none)
+                        .foregroundStyle(.main)
                 } footer: {
                     if(gkDogruSayisi + gkYanlisSayisi > 60) {
                         Text("Toplam doğru ve yanlış sayıları 60'ı geçemez.")
@@ -107,6 +109,7 @@ struct OABTView: View {
                 } header: {
                     Text("Eğitim Bilimleri")
                         .textCase(.none)
+                        .foregroundStyle(.main)
                 } footer: {
                     if(ebDogruSayisi + ebYanlisSayisi > 80) {
                         Text("Toplam doğru ve yanlış sayıları 80'ı geçemez.")
@@ -160,6 +163,7 @@ struct OABTView: View {
                 } header: {
                     Text("Eğitim Bilimleri")
                         .textCase(.none)
+                        .foregroundStyle(.main)
                 } footer: {
                     if(ebDogruSayisi + ebYanlisSayisi > 75) {
                         Text("Toplam doğru ve yanlış sayıları 75'i geçemez.")

@@ -17,6 +17,7 @@ struct SonucView: View {
     let sonucEB2023: Double
     let sonucOABT2023: Double?
     
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         
@@ -52,6 +53,13 @@ struct SonucView: View {
                 }
             }
             .navigationTitle("Sonuç")
+            .toolbar {
+                ToolbarItem {
+                    Button("Kapat", systemImage: "xmark"){
+                        dismiss()
+                    }
+                }
+            }
         }
         
     }

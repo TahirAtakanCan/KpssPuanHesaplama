@@ -33,6 +33,7 @@ struct OnLisansView: View {
                 } header: {
                     Text("Genel Yetenek")
                         .textCase(.none)
+                        .foregroundStyle(.main)
                 } footer: {
                     if(gyDogruSayisi + gyYanlisSayisi > 60) {
                         Text("Toplam doğru ve yanlış sayıları 60'ı geçemez.")
@@ -52,6 +53,7 @@ struct OnLisansView: View {
                 } header: {
                     Text("Genel Kültür")
                         .textCase(.none)
+                        .foregroundStyle(.main)
                 } footer: {
                     if(gkDogruSayisi + gkYanlisSayisi > 60) {
                         Text("Toplam doğru ve yanlış sayıları 60'ı geçemez.")
@@ -80,6 +82,7 @@ struct OnLisansView: View {
                     } header: {
                     Text("Sonuç")
                         .textCase(.none)
+                        .foregroundStyle(.main)
                 }
                 
                 

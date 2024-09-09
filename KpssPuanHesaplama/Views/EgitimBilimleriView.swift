@@ -23,6 +23,8 @@ struct EgitimBilimleriView: View {
     @State private var sonuc2023:Double = 0
     @State private var sonucEB2023:Double = 0
     
+    @State private var isShowingSheet = false
+    
     var body: some View {
         VStack {
             
@@ -39,6 +41,7 @@ struct EgitimBilimleriView: View {
                 } header: {
                     Text("Genel Yetenek")
                         .textCase(.none)
+                        .foregroundStyle(.main)
                 } footer: {
                     if(gyDogruSayisi + gyYanlisSayisi > 60) {
                         Text("Toplam doğru ve yanlış sayıları 60'ı geçemez.")
@@ -58,6 +61,7 @@ struct EgitimBilimleriView: View {
                 } header: {
                     Text("Genel Kültür")
                         .textCase(.none)
+                        .foregroundColor(.main)
                 } footer: {
                     if(gkDogruSayisi + gkYanlisSayisi > 60) {
                         Text("Toplam doğru ve yanlış sayıları 60'ı geçemez.")
@@ -73,35 +77,6 @@ struct EgitimBilimleriView: View {
                         .sensoryFeedback(.selection, trigger: ebYanlisSayisi)
                         .bold()
                     
-                } header: {
-                    Text("Eğitim Bilimleri")
-                        .textCase(.none)
-                } footer: {
-                    if(ebDogruSayisi + ebYanlisSayisi > 80) {
-                        Text("Toplam doğru ve yanlış sayıları 80'ı geçemez.")
-                            .foregroundStyle(.red)
-                    }
-                }
-                
-                Section {
-                    VStack(alignment: .leading) {
-                        Text("2023 P3(Memur) Puanı: \(sonuc2023, specifier: "%.3f")")
-                            .bold()
-                        
-                        Text("2023 P10(Öğretmen) Puanı: \(sonucEB2023, specifier: "%.3f")")
-                            .bold()
-                    }
-                    
-                    VStack(alignment: .leading) {
-                        Text("2022 P3(Memur) Puanı: \(sonuc2022, specifier: "%.3f")")
-                            .bold()
-                        
-                        Text("2022 P10(Öğretmen) Puanı: \(sonucEB2022, specifier: "%.3f")")
-                            .bold()
-                    }
-                        //.transition(.slide)
-                        //.animation(.default, value: sonuc)
-                    
                     HesaplaButton(title: "Hesapla") {
                         
                         let gkNet = gkDogruSayisi - (gkYanlisSayisi / 4)
@@ -115,15 +90,24 @@ struct EgitimBilimleriView: View {
                             sonucEB2023 = (40.405 + gyNet * 0.3493 + gkNet * 0.3672 + ebNet * 0.37145)
                             sonuc2023 = (51.209 + gyNet * 0.537 + gkNet * 0.418)
                         }
-                        
+                        isShowingSheet.toggle()
                     }
                     //.disabled(formKontrol)
                     .sensoryFeedback(.success, trigger: sonuc2022)
-                    } header: {
-                    Text("Sonuç")
+                    .sheet(isPresented: $isShowingSheet) {
+                        SonucView(sonuc2022: sonuc2022, sonucEB2022: sonucEB2022, sonucOABT2022: nil, sonuc2023: sonuc2023, sonucEB2023: sonucEB2023, sonucOABT2023: nil)
+                    }
+                    
+                } header: {
+                    Text("Eğitim Bilimleri")
                         .textCase(.none)
+                        .foregroundColor(.main)
+                } footer: {
+                    if(ebDogruSayisi + ebYanlisSayisi > 80) {
+                        Text("Toplam doğru ve yanlış sayıları 80'ı geçemez.")
+                            .foregroundStyle(.red)
+                    }
                 }
-                
                 
             }
             
