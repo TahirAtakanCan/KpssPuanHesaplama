@@ -174,6 +174,7 @@ struct OABTView: View {
             
         }
         .navigationTitle("ÖABT")
+        .toolbar(.hidden, for: .tabBar)
     }
     
     var formKontrol: Bool {

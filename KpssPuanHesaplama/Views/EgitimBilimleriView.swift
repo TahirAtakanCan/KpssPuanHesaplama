@@ -113,6 +113,7 @@ struct EgitimBilimleriView: View {
             
         }
         .navigationTitle("Egitim Bilimleri")
+        .toolbar(.hidden, for: .tabBar)
     }
     
     var formKontrol: Bool {

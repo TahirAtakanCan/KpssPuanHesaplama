@@ -94,6 +94,7 @@ struct LisansView: View {
             
         }
         .navigationTitle("Lisans")
+        .toolbar(.hidden, for: .tabBar)
     }
     
     var formKontrol: Bool {

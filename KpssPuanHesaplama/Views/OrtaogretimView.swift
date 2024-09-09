@@ -90,6 +90,7 @@ struct OrtaogretimView: View {
             
         }
         .navigationTitle("Ortaöğretim")
+        .toolbar(.hidden, for: .tabBar)
     }
     
     var formKontrol: Bool {

@@ -90,6 +90,7 @@ struct OnLisansView: View {
             
         }
         .navigationTitle("OnLisans")
+        .toolbar(.hidden, for: .tabBar)
     }
     
     var formKontrol: Bool {
