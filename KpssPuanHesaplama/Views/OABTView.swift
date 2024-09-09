@@ -118,11 +118,16 @@ struct OABTView: View {
                     Picker("Bölüm Seçiniz", selection: $selectedOption) {
                         ForEach(0..<options.count, id: \.self){ index in
                             HStack {
-                                Image(systemName: "person.circle.fill")
-                                Text(options[index].2)
-                            }
+                            Image(systemName: "person.circle.fill")
+                            Text(options[index].2)
+                        }
                     }
                 }
+                .onChange(of: selectedOption) {
+                    oabtKatsayi = options[selectedOption].0
+                    oabtPuan = options[selectedOption].1
+                }
+                    
                     Stepper("Doğru Sayısı: \(oabtDogruSayisi, specifier: "%.0f")", value: $oabtDogruSayisi, in: 0...(75 - oabtYanlisSayisi))
                         .sensoryFeedback(.selection, trigger: oabtDogruSayisi)
                         .bold()
@@ -153,7 +158,10 @@ struct OABTView: View {
                         Text("2022 P3(Memur) Puanı: \(sonuc2022, specifier: "%.3f")")
                             .bold()
                         
-                        Text("2022 P310(Öğretmen) Puanı: \(sonucEB2022, specifier: "%.3f")")
+                        Text("2022 P10(Öğretmen) Puanı: \(sonucEB2022, specifier: "%.3f")")
+                            .bold()
+                        
+                        Text("2022 P121(Alan) Puanı: \(sonucOABT2022, specifier: "%.3f")")
                             .bold()
                     }
                         //.transition(.slide)
