@@ -20,6 +20,7 @@
 		FB40C04C2C3EC5400040FDF2 /* EgitimBilimleriView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C04B2C3EC5400040FDF2 /* EgitimBilimleriView.swift */; };
 		FB40C04E2C3EC54F0040FDF2 /* OABTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C04D2C3EC54F0040FDF2 /* OABTView.swift */; };
 		FB5922792C8F3A0100FE92E0 /* SonucView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5922782C8F3A0100FE92E0 /* SonucView.swift */; };
+		FBA7E2E32C90872F006B14D3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA7E2E22C90872F006B14D3 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		FB40C04B2C3EC5400040FDF2 /* EgitimBilimleriView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EgitimBilimleriView.swift; sourceTree = "<group>"; };
 		FB40C04D2C3EC54F0040FDF2 /* OABTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OABTView.swift; sourceTree = "<group>"; };
 		FB5922782C8F3A0100FE92E0 /* SonucView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonucView.swift; sourceTree = "<group>"; };
+		FBA7E2E22C90872F006B14D3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		FB40C0402C3EB3AE0040FDF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FBA7E2E12C908700006B14D3 /* Helpers */,
 				FB3909622C47EDFF009698D2 /* SharedViews */,
 				FB40C03D2C3EB35E0040FDF2 /* RootView.swift */,
 				FB40C0412C3EB3DB0040FDF2 /* MainView.swift */,
@@ -116,6 +119,14 @@
 				FB40C04D2C3EC54F0040FDF2 /* OABTView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FBA7E2E12C908700006B14D3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FBA7E2E22C90872F006B14D3 /* Constant.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +210,7 @@
 				FB40C04C2C3EC5400040FDF2 /* EgitimBilimleriView.swift in Sources */,
 				FB40C04E2C3EC54F0040FDF2 /* OABTView.swift in Sources */,
 				FB5922792C8F3A0100FE92E0 /* SonucView.swift in Sources */,
+				FBA7E2E32C90872F006B14D3 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
