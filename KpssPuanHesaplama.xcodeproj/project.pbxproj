@@ -21,6 +21,7 @@
 		FB40C04E2C3EC54F0040FDF2 /* OABTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C04D2C3EC54F0040FDF2 /* OABTView.swift */; };
 		FB5922792C8F3A0100FE92E0 /* SonucView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5922782C8F3A0100FE92E0 /* SonucView.swift */; };
 		FBA7E2E32C90872F006B14D3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA7E2E22C90872F006B14D3 /* Constant.swift */; };
+		FBA7E2E62C909EA0006B14D3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA7E2E52C909EA0006B14D3 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		FB40C04D2C3EC54F0040FDF2 /* OABTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OABTView.swift; sourceTree = "<group>"; };
 		FB5922782C8F3A0100FE92E0 /* SonucView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonucView.swift; sourceTree = "<group>"; };
 		FBA7E2E22C90872F006B14D3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		FBA7E2E52C909EA0006B14D3 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		FB40C02E2C3EAE300040FDF2 /* KpssPuanHesaplama */ = {
 			isa = PBXGroup;
 			children = (
+				FBA7E2E42C909E8F006B14D3 /* Model */,
 				FB40C0402C3EB3AE0040FDF2 /* Views */,
 				FB40C03F2C3EB39E0040FDF2 /* Resources */,
 				FB40C0352C3EAE310040FDF2 /* Preview Content */,
@@ -127,6 +130,14 @@
 				FBA7E2E22C90872F006B14D3 /* Constant.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FBA7E2E42C909E8F006B14D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FBA7E2E52C909EA0006B14D3 /* Result.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB3909642C47EE2A009698D2 /* HesaplaButton.swift in Sources */,
+				FBA7E2E62C909EA0006B14D3 /* Result.swift in Sources */,
 				FB40C04A2C3EC5310040FDF2 /* LisansView.swift in Sources */,
 				FB40C03E2C3EB35E0040FDF2 /* RootView.swift in Sources */,
 				FB40C0462C3EC5180040FDF2 /* OrtaogretimView.swift in Sources */,
