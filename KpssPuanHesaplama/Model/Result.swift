@@ -20,7 +20,7 @@ class Result: Identifiable {
     let tarih = Date()
     let sonuc: Double
 
-    init(sınavAdi: String, gyNet: Double, gkNet: Double, ebNet: Double?, oabtNet: Double?, tarih: Date, sonuc: Double) {
+    init(sınavAdi: String, gyNet: Double, gkNet: Double, ebNet: Double? = nil, oabtNet: Double? = nil, tarih: Date, sonuc: Double) {
         self.sınavAdi = sınavAdi
         self.gyNet = gyNet
         self.gkNet = gkNet

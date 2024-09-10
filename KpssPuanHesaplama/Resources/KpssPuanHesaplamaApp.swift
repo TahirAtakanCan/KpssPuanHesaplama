@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct KpssPuanHesaplamaApp: App {
@@ -27,5 +28,6 @@ struct KpssPuanHesaplamaApp: App {
         WindowGroup {
             RootView()
         }
+        .modelContainer(for:Result.self)
     }
 }
