@@ -24,10 +24,14 @@ struct LisansView: View {
             Form {
                 
                 Section {
-                    Stepper("Doğru Sayısı: \(gyDogruSayisi, specifier: "%.0f")", value: $gyDogruSayisi, in: 0...(60 - gyYanlisSayisi))
+                    Stepper(value: $gyDogruSayisi, in: 1...60){
+                        Label("Doğru Sayısı: \(gyDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
+                    }
                         .sensoryFeedback(.selection, trigger: gyDogruSayisi)
                         .bold()
-                    Stepper("Yanlış Sayısı: \(gyYanlisSayisi, specifier: "%.0f")", value: $gyYanlisSayisi, in: 0...(60 - gyDogruSayisi))
+                    Stepper(value: $gyYanlisSayisi, in: 1...60){
+                        Label("Yanlış Sayısı: \(gyYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
+                    }
                         .sensoryFeedback(.selection, trigger: gyYanlisSayisi)
                         .bold()
                     
@@ -44,10 +48,14 @@ struct LisansView: View {
                 
                 
                 Section {
-                    Stepper("Doğru Sayısı: \(gkDogruSayisi, specifier: "%.0f")", value: $gkDogruSayisi, in: 0...(60 - gkYanlisSayisi))
+                    Stepper(value: $gkDogruSayisi, in: 1...60){
+                        Label("Doğru Sayısı: \(gkDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
+                    }
                         .sensoryFeedback(.selection, trigger: gkDogruSayisi)
                         .bold()
-                    Stepper("Yanlış Sayısı: \(gkYanlisSayisi, specifier: "%.0f")", value: $gkYanlisSayisi, in: 0...(60 - gkDogruSayisi))
+                    Stepper(value: $gkYanlisSayisi, in: 1...60){
+                        Label("Yanlış Sayısı: \(gkYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
+                    }
                         .sensoryFeedback(.selection, trigger: gkYanlisSayisi)
                         .bold()
                     
@@ -76,8 +84,8 @@ struct LisansView: View {
                         let gyNet = gyDogruSayisi - (gyYanlisSayisi / 4)
                         
                         withAnimation {
-                            sonuc2023 = 51.209 + gyNet * 0.537 + gkNet * 0.418
-                            sonuc2022 = 48.616 + gyNet * 0.4756 + gkNet * 0.4192
+                            sonuc2023 = Constants.lisans2023Puan + gyNet * Constants.lisans2023GYKatsayi + gkNet * Constants.lisans2023GKKatsayi
+                            sonuc2022 = Constants.lisans2022Puan + gyNet * Constants.lisans2022GYKatsayi + gkNet * Constants.lisans2022GKKatsayi
                         }
                         
                     }

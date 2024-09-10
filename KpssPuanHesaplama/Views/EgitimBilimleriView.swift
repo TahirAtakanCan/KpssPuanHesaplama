@@ -31,12 +31,17 @@ struct EgitimBilimleriView: View {
             Form {
                 
                 Section {
-                    Stepper("Doğru Sayısı: \(gyDogruSayisi, specifier: "%.0f")", value: $gyDogruSayisi, in: 0...(60 - gyYanlisSayisi))
-                        .sensoryFeedback(.selection, trigger: gyDogruSayisi)
-                        .bold()
-                    Stepper("Yanlış Sayısı: \(gyYanlisSayisi, specifier: "%.0f")", value: $gyYanlisSayisi, in: 0...(60 - gyDogruSayisi))
-                        .sensoryFeedback(.selection, trigger: gyYanlisSayisi)
-                        .bold()
+                    Stepper(value: $gyDogruSayisi, in: 0...(60 - gyYanlisSayisi)) {
+                        Label("Doğru Sayısı: \(gyDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
+                    }
+                    .sensoryFeedback(.selection, trigger: gyDogruSayisi)
+                    .bold()
+                    
+                    Stepper(value: $gyYanlisSayisi, in: 0...(60 - gyDogruSayisi)) {
+                        Label("Yanlış Sayısı: \(gyYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
+                    }
+                    .sensoryFeedback(.selection, trigger: gyYanlisSayisi)
+                    .bold()
                     
                 } header: {
                     Text("Genel Yetenek")
@@ -48,16 +53,20 @@ struct EgitimBilimleriView: View {
                             .foregroundStyle(.red)
                     }
                 }
-                
-                
+
                 Section {
-                    Stepper("Doğru Sayısı: \(gkDogruSayisi, specifier: "%.0f")", value: $gkDogruSayisi, in: 0...(60 - gkYanlisSayisi))
-                        .sensoryFeedback(.selection, trigger: gkDogruSayisi)
-                        .bold()
-                    Stepper("Yanlış Sayısı: \(gkYanlisSayisi, specifier: "%.0f")", value: $gkYanlisSayisi, in: 0...(60 - gkDogruSayisi))
-                        .sensoryFeedback(.selection, trigger: gkYanlisSayisi)
-                        .bold()
-                    
+                    Stepper(value: $gkDogruSayisi, in: 0...(60 - gkYanlisSayisi)) {
+                        Label("Doğru Sayısı: \(gkDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
+                    }
+                    .sensoryFeedback(.selection, trigger: gkDogruSayisi)
+                    .bold()
+
+                    Stepper(value: $gkYanlisSayisi, in: 0...(60 - gkDogruSayisi)) {
+                        Label("Yanlış Sayısı: \(gkYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
+                    }
+                    .sensoryFeedback(.selection, trigger: gkYanlisSayisi)
+                    .bold()
+
                 } header: {
                     Text("Genel Kültür")
                         .textCase(.none)
@@ -70,10 +79,14 @@ struct EgitimBilimleriView: View {
                 }
                 
                 Section {
-                    Stepper("Doğru Sayısı: \(ebDogruSayisi, specifier: "%.0f")", value: $ebDogruSayisi, in: 0...(80 - ebYanlisSayisi))
+                    Stepper(value: $ebDogruSayisi, in: 0...(80 - ebYanlisSayisi)){
+                        Label("Doğru Sayısı: \(ebDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
+                    }
                         .sensoryFeedback(.selection, trigger: ebDogruSayisi)
                         .bold()
-                    Stepper("Yanlış Sayısı: \(ebYanlisSayisi, specifier: "%.0f")", value: $ebYanlisSayisi, in: 0...(80 - ebDogruSayisi))
+                    Stepper(value: $ebYanlisSayisi, in: 0...(80 - ebDogruSayisi)){
+                        Label("Yanlış Sayısı: \(ebYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
+                    }
                         .sensoryFeedback(.selection, trigger: ebYanlisSayisi)
                         .bold()
                     
@@ -84,11 +97,10 @@ struct EgitimBilimleriView: View {
                         let ebNet = ebDogruSayisi - (ebYanlisSayisi / 4)
                         
                         withAnimation {
-                            sonucEB2022 = (36.812 + gyNet * 0.3985 + gkNet * 0.3512 + ebNet * 0.34714)
-                            sonuc2022 = (48.616 + gyNet * 0.4756 + gkNet * 0.4192)
-                            
-                            sonucEB2023 = (40.405 + gyNet * 0.3493 + gkNet * 0.3672 + ebNet * 0.37145)
-                            sonuc2023 = (51.209 + gyNet * 0.537 + gkNet * 0.418)
+                            sonucEB2022   = Constants.eb2022Puan + gyNet * Constants.eb2022GYKatsayi + gkNet * Constants.eb2022GKKatsayi + ebNet * Constants.eb2022Katsayi
+                            sonuc2022     = Constants.lisans2022Puan + gyNet * Constants.lisans2022GYKatsayi + gkNet * Constants.lisans2022GKKatsayi
+                            sonucEB2023   = Constants.eb2023Puan + gyNet * Constants.eb2023GYKatsayi + gkNet * Constants.eb2023GKKatsayi + ebNet * Constants.eb2023Katsayi
+                            sonuc2023     = Constants.lisans2023Puan + gyNet * Constants.lisans2023GYKatsayi + gkNet * Constants.lisans2023GKKatsayi
                         }
                         isShowingSheet.toggle()
                     }

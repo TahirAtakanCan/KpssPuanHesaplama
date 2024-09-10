@@ -23,10 +23,14 @@ struct OnLisansView: View {
             Form {
                 
                 Section {
-                    Stepper("Doğru Sayısı: \(gyDogruSayisi, specifier: "%.0f")", value: $gyDogruSayisi, in: 0...(60 - gyYanlisSayisi))
+                    Stepper(value: $gyDogruSayisi, in: 1...60){
+                        Label("Doğru Sayısı: \(gyDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
+                    }
                         .sensoryFeedback(.selection, trigger: gyDogruSayisi)
                         .bold()
-                    Stepper("Yanlış Sayısı: \(gyYanlisSayisi, specifier: "%.0f")", value: $gyYanlisSayisi, in: 0...(60 - gyDogruSayisi))
+                    Stepper(value: $gyYanlisSayisi, in: 1...60){
+                        Label("Yanlış Sayısı: \(gyYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
+                    }
                         .sensoryFeedback(.selection, trigger: gyYanlisSayisi)
                         .bold()
                     
@@ -43,10 +47,14 @@ struct OnLisansView: View {
                 
                 
                 Section {
-                    Stepper("Doğru Sayısı: \(gkDogruSayisi, specifier: "%.0f")", value: $gkDogruSayisi, in: 0...(60 - gkYanlisSayisi))
+                    Stepper(value: $gkDogruSayisi, in: 1...60){
+                        Label("Doğru Sayısı: \(gkDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
+                    }
                         .sensoryFeedback(.selection, trigger: gkDogruSayisi)
                         .bold()
-                    Stepper("Yanlış Sayısı: \(gkYanlisSayisi, specifier: "%.0f")", value: $gkYanlisSayisi, in: 0...(60 - gkDogruSayisi))
+                    Stepper(value: $gkYanlisSayisi, in: 1...60){
+                        Label("Yanlış Sayısı: \(gkYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
+                    }
                         .sensoryFeedback(.selection, trigger: gkYanlisSayisi)
                         .bold()
                     
@@ -73,7 +81,7 @@ struct OnLisansView: View {
                         let gyNet = gyDogruSayisi - (gyYanlisSayisi / 4)
                         
                         withAnimation {
-                            sonuc = (53.816 + gyNet * 0.43 + gkNet * 0.397)
+                            sonuc = Constants.onlisansPuan + gyNet * Constants.onlisansGYKatsayi + gkNet * Constants.onlisansGKKatsayi
                         }
                         
                     }

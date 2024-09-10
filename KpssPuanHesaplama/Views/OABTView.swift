@@ -32,25 +32,25 @@ struct OABTView: View {
     
     @State private var selectedOption = 0
     let options = [
-            (0.4334,43.805, "Beden Eğitimi"),
-            (0.3666,41.071, "Biyoloji"),
-            (0.4301,39.060, "Coğrafya"),
-            (0.4052,34.908, "Din Kültürü"),
-            (0.3679,42.156, "Edebiyat"),
-            (0.5388,39.313, "Fen Bilgisi"),
-            (0.3817,41.604, "Fizik"),
-            (0.5225,36.309, "İlköğretim Matematik"),
-            (0.3883,37.962, "İmam Hatip Meslek Dersleri Ö."),
-            (0.3791,40.920, "İngilizce"),
-            (0.4542,42.157, "Kimya"),
-            (0.4247,41.759, "Lise Matematik"),
-            (0.4944,33.292, "Okul Öncesi"),
-            (0.4883,29.014, "Rehberlik "),
-            (0.6184,33.598, "Sınıf Öğretmenliği"),
-            (0.6142,34.101, "Sosyal Bilgiler"),
-            (0.3521,41.418, "Tarih"),
-            (0.4565,34.329, "Türkçe")
-        ]
+        (0.4334,43.805, "Beden Eğitimi"),
+        (0.3666,41.071, "Biyoloji"),
+        (0.4301,39.060, "Coğrafya"),
+        (0.4052,34.908, "Din Kültürü"),
+        (0.3679,42.156, "Edebiyat"),
+        (0.5388,39.313, "Fen Bilgisi"),
+        (0.3817,41.604, "Fizik"),
+        (0.5225,36.309, "İlköğretim Matematik"),
+        (0.3883,37.962, "İmam Hatip Meslek Dersleri Ö."),
+        (0.3791,40.920, "İngilizce"),
+        (0.4542,42.157, "Kimya"),
+        (0.4247,41.759, "Lise Matematik"),
+        (0.4944,33.292, "Okul Öncesi"),
+        (0.4883,29.014, "Rehberlik "),
+        (0.6184,33.598, "Sınıf Öğretmenliği"),
+        (0.6142,34.101, "Sosyal Bilgiler"),
+        (0.3521,41.418, "Tarih"),
+        (0.4565,34.329, "Türkçe")
+    ]
     
     @State private var isShowingSheet = false
     
@@ -60,12 +60,17 @@ struct OABTView: View {
             Form {
                 
                 Section {
-                    Stepper("Doğru Sayısı: \(gyDogruSayisi, specifier: "%.0f")", value: $gyDogruSayisi, in: 0...(60 - gyYanlisSayisi))
-                        .sensoryFeedback(.selection, trigger: gyDogruSayisi)
-                        .bold()
-                    Stepper("Yanlış Sayısı: \(gyYanlisSayisi, specifier: "%.0f")", value: $gyYanlisSayisi, in: 0...(60 - gyDogruSayisi))
-                        .sensoryFeedback(.selection, trigger: gyYanlisSayisi)
-                        .bold()
+                    Stepper(value: $gyDogruSayisi, in: 0...(60 - gyYanlisSayisi)) {
+                        Label("Doğru Sayısı: \(gyDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
+                    }
+                    .sensoryFeedback(.selection, trigger: gyDogruSayisi)
+                    .bold()
+                    
+                    Stepper(value: $gyYanlisSayisi, in: 0...(60 - gyDogruSayisi)) {
+                        Label("Yanlış Sayısı: \(gyYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
+                    }
+                    .sensoryFeedback(.selection, trigger: gyYanlisSayisi)
+                    .bold()
                     
                 } header: {
                     Text("Genel Yetenek")
@@ -78,14 +83,18 @@ struct OABTView: View {
                     }
                 }
                 
-                
                 Section {
-                    Stepper("Doğru Sayısı: \(gkDogruSayisi, specifier: "%.0f")", value: $gkDogruSayisi, in: 0...(60 - gkYanlisSayisi))
-                        .sensoryFeedback(.selection, trigger: gkDogruSayisi)
-                        .bold()
-                    Stepper("Yanlış Sayısı: \(gkYanlisSayisi, specifier: "%.0f")", value: $gkYanlisSayisi, in: 0...(60 - gkDogruSayisi))
-                        .sensoryFeedback(.selection, trigger: gkYanlisSayisi)
-                        .bold()
+                    Stepper(value: $gkDogruSayisi, in: 0...(60 - gkYanlisSayisi)) {
+                        Label("Doğru Sayısı: \(gkDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
+                    }
+                    .sensoryFeedback(.selection, trigger: gkDogruSayisi)
+                    .bold()
+                    
+                    Stepper(value: $gkYanlisSayisi, in: 0...(60 - gkDogruSayisi)) {
+                        Label("Yanlış Sayısı: \(gkYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
+                    }
+                    .sensoryFeedback(.selection, trigger: gkYanlisSayisi)
+                    .bold()
                     
                 } header: {
                     Text("Genel Kültür")
@@ -99,12 +108,17 @@ struct OABTView: View {
                 }
                 
                 Section {
-                    Stepper("Doğru Sayısı: \(ebDogruSayisi, specifier: "%.0f")", value: $ebDogruSayisi, in: 0...(80 - ebYanlisSayisi))
-                        .sensoryFeedback(.selection, trigger: ebDogruSayisi)
-                        .bold()
-                    Stepper("Yanlış Sayısı: \(ebYanlisSayisi, specifier: "%.0f")", value: $ebYanlisSayisi, in: 0...(80 - ebDogruSayisi))
-                        .sensoryFeedback(.selection, trigger: ebYanlisSayisi)
-                        .bold()
+                    Stepper(value: $ebDogruSayisi, in: 0...(80 - ebYanlisSayisi)) {
+                        Label("Doğru Sayısı: \(ebDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
+                    }
+                    .sensoryFeedback(.selection, trigger: ebDogruSayisi)
+                    .bold()
+                    
+                    Stepper(value: $ebYanlisSayisi, in: 0...(80 - ebDogruSayisi)) {
+                        Label("Yanlış Sayısı: \(ebYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
+                    }
+                    .sensoryFeedback(.selection, trigger: ebYanlisSayisi)
+                    .bold()
                     
                 } header: {
                     Text("Eğitim Bilimleri")
@@ -112,7 +126,7 @@ struct OABTView: View {
                         .foregroundStyle(.main)
                 } footer: {
                     if(ebDogruSayisi + ebYanlisSayisi > 80) {
-                        Text("Toplam doğru ve yanlış sayıları 80'ı geçemez.")
+                        Text("Toplam doğru ve yanlış sayıları 80'i geçemez.")
                             .foregroundStyle(.red)
                     }
                 }
@@ -121,22 +135,28 @@ struct OABTView: View {
                     Picker("Bölüm Seçiniz", selection: $selectedOption) {
                         ForEach(0..<options.count, id: \.self){ index in
                             HStack {
-                            Image(systemName: "person.circle.fill")
-                            Text(options[index].2)
+                                Image(systemName: "person.circle.fill")
+                                Text(options[index].2)
+                            }
                         }
                     }
-                }
-                .onChange(of: selectedOption) {
-                    oabtKatsayi = options[selectedOption].0
-                    oabtPuan = options[selectedOption].1
-                }
+                    .onChange(of: selectedOption) {
+                        oabtKatsayi = options[selectedOption].0
+                        oabtPuan = options[selectedOption].1
+                    }
                     
-                    Stepper("Doğru Sayısı: \(oabtDogruSayisi, specifier: "%.0f")", value: $oabtDogruSayisi, in: 0...(75 - oabtYanlisSayisi))
-                        .sensoryFeedback(.selection, trigger: oabtDogruSayisi)
-                        .bold()
-                    Stepper("Yanlış Sayısı: \(oabtYanlisSayisi, specifier: "%.0f")", value: $oabtYanlisSayisi, in: 0...(75 - oabtDogruSayisi))
-                        .sensoryFeedback(.selection, trigger: oabtYanlisSayisi)
-                        .bold()
+                    Stepper(value: $oabtDogruSayisi, in: 0...(75 - oabtYanlisSayisi)) {
+                        Label("Doğru Sayısı: \(oabtDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
+                    }
+                    .sensoryFeedback(.selection, trigger: oabtDogruSayisi)
+                    .bold()
+                    
+                    Stepper(value: $oabtYanlisSayisi, in: 0...(75 - oabtDogruSayisi)) {
+                        Label("Yanlış Sayısı: \(oabtYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
+                    }
+                    .sensoryFeedback(.selection, trigger: oabtYanlisSayisi)
+                    .bold()
+                    
                     
                     HesaplaButton(title: "Hesapla") {
                         
@@ -145,12 +165,11 @@ struct OABTView: View {
                         let ebNet = ebDogruSayisi - (ebYanlisSayisi / 4)
                         let oabtNet = oabtDogruSayisi - (oabtYanlisSayisi / 4)
                         
-                        sonuc2022 = 48.616 + gyNet * 0.4756 + gkNet * 0.4192
-                        sonucEB2022 = 36.812 + gyNet * 6.3985 + gkNet * 0.3512 + ebNet * 0.34714
-                        sonucOABT2022 = oabtPuan + gyNet * 0.1720 + gkNet * 0.1515 + ebNet * 0.1498 + oabtNet * oabtKatsayi
-        
-                        sonuc2023 = 51.209 + gyNet * 0.537 + gkNet * 0.418
-                        sonucEB2023 = 40.405 + gyNet * 0.3493 + gkNet * 0.3672 + ebNet * 0.37145
+                        sonuc2022     = Constants.lisans2022Puan + gyNet * Constants.lisans2022GYKatsayi + gkNet * Constants.lisans2022GKKatsayi
+                        sonucEB2022   = Constants.eb2022Puan + gyNet * Constants.eb2022GYKatsayi + gkNet * Constants.eb2022GKKatsayi + ebNet * Constants.eb2022Katsayi
+                        sonucOABT2022 = oabtPuan + gyNet * Constants.oabt2022GYKatsayi + gkNet * Constants.oabt2022GKKatsayi + ebNet * Constants.oabt2022GKKatsayi + oabtNet * oabtKatsayi
+                        sonuc2023     = Constants.lisans2023Puan + gyNet * Constants.lisans2023GYKatsayi + gkNet * Constants.lisans2023GKKatsayi
+                        sonucEB2023   = Constants.eb2023Puan + gyNet * Constants.eb2023GYKatsayi + gkNet * Constants.eb2023GKKatsayi + ebNet * Constants.eb2023Katsayi
                         isShowingSheet.toggle()
                         
                     }
@@ -161,7 +180,7 @@ struct OABTView: View {
                     }
                     
                 } header: {
-                    Text("Eğitim Bilimleri")
+                    Text("ÖABT")
                         .textCase(.none)
                         .foregroundStyle(.main)
                 } footer: {

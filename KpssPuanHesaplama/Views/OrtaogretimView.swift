@@ -47,10 +47,14 @@ struct OrtaogretimView: View {
                 
                 
                 Section {
-                    Stepper("Doğru Sayısı: \(gkDogruSayisi, specifier: "%.0f")", value: $gkDogruSayisi, in: 0...(60 - gkYanlisSayisi))
+                    Stepper(value: $gkDogruSayisi, in: 1...60){
+                        Label("Doğru Sayısı: \(gkDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
+                    }
                         .sensoryFeedback(.selection, trigger: gkDogruSayisi)
                         .bold()
-                    Stepper("Yanlış Sayısı: \(gkYanlisSayisi, specifier: "%.0f")", value: $gkYanlisSayisi, in: 0...(60 - gkDogruSayisi))
+                    Stepper(value: $gkYanlisSayisi, in: 1...60){
+                        Label("Yanlış Sayısı: \(gkYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
+                    }
                         .sensoryFeedback(.selection, trigger: gkYanlisSayisi)
                         .bold()
                     
@@ -77,7 +81,7 @@ struct OrtaogretimView: View {
                         let gyNet = gyDogruSayisi - (gyYanlisSayisi / 4)
                         
                         withAnimation {
-                            sonuc = 55.839 + gyNet * 0.348 + gkNet * 0.431
+                            sonuc = Constants.ortaogretimPuan + gyNet * Constants.ortaogretimGYKatsayi + gkNet * Constants.ortaogretimGKKatsayi
                         }
                         
                     }
