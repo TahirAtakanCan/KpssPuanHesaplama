@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB37F8392C9203ED006DB066 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB37F8382C9203ED006DB066 /* BannerViewController.swift */; };
+		FB37F83B2C92060B006DB066 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB37F83A2C92060B006DB066 /* BannerView.swift */; };
 		FB3909642C47EE2A009698D2 /* HesaplaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3909632C47EE2A009698D2 /* HesaplaButton.swift */; };
 		FB3E75552C91F470001A1D92 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = FB3E75542C91F470001A1D92 /* GoogleMobileAds */; };
 		FB40C0302C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C02F2C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB37F8382C9203ED006DB066 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
+		FB37F83A2C92060B006DB066 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		FB3909632C47EE2A009698D2 /* HesaplaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HesaplaButton.swift; sourceTree = "<group>"; };
 		FB3E75562C91F4B1001A1D92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FB40C02C2C3EAE300040FDF2 /* KpssPuanHesaplama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KpssPuanHesaplama.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB37F8372C9203C0006DB066 /* Admob */ = {
+			isa = PBXGroup;
+			children = (
+				FB37F8382C9203ED006DB066 /* BannerViewController.swift */,
+				FB37F83A2C92060B006DB066 /* BannerView.swift */,
+			);
+			path = Admob;
+			sourceTree = "<group>";
+		};
 		FB3909622C47EDFF009698D2 /* SharedViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +144,7 @@
 		FBA7E2E12C908700006B14D3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FB37F8372C9203C0006DB066 /* Admob */,
 				FBA7E2E22C90872F006B14D3 /* Constant.swift */,
 			);
 			path = Helpers;
@@ -225,7 +239,9 @@
 				FB40C04A2C3EC5310040FDF2 /* LisansView.swift in Sources */,
 				FB40C03E2C3EB35E0040FDF2 /* RootView.swift in Sources */,
 				FB40C0462C3EC5180040FDF2 /* OrtaogretimView.swift in Sources */,
+				FB37F83B2C92060B006DB066 /* BannerView.swift in Sources */,
 				FB40C0442C3EB3E80040FDF2 /* ResultView.swift in Sources */,
+				FB37F8392C9203ED006DB066 /* BannerViewController.swift in Sources */,
 				FB40C0422C3EB3DB0040FDF2 /* MainView.swift in Sources */,
 				FB40C0302C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift in Sources */,
 				FB40C0482C3EC5250040FDF2 /* OnLisansView.swift in Sources */,

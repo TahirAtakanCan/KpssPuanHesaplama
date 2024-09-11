@@ -61,7 +61,7 @@ struct OrtaogretimView: View {
                     Text("KPSS Puanı: \(sonuc, specifier: "%.3f")")
                         .bold()
                     
-                    Button("Hesapla") {
+                    HesaplaButton(title: "Hesapla"){
                         let gkNet = gkDogruSayisi - (gkYanlisSayisi / 4)
                         let gyNet = gyDogruSayisi - (gyYanlisSayisi / 4)
                         
