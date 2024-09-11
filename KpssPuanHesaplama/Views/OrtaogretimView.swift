@@ -22,63 +22,63 @@ struct OrtaogretimView: View {
     
     var body: some View {
         VStack {
-                    
-                    Form {
-                        
-                        Section {
-                            Stepper(value: $gyDogruSayisi, in: 0...60) {
-                                Label("Doğru Sayısı: \(gyDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
-                            }
-                            Stepper(value: $gyYanlisSayisi, in: 0...60) {
-                                Label("Yanlış Sayısı: \(gyYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
-                            }
-                        } header: {
-                            Text("Genel Yetenek")
-                        } footer: {
-                            if gyDogruSayisi + gyYanlisSayisi > 60 {
-                                Text("Toplam doğru ve yanlış sayıları 60'ı geçemez.")
-                                    .foregroundColor(.red)
-                            }
-                        }
-                        
-                        Section {
-                            Stepper(value: $gkDogruSayisi, in: 0...60) {
-                                Label("Doğru Sayısı: \(gkDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
-                            }
-                            Stepper(value: $gkYanlisSayisi, in: 0...60) {
-                                Label("Yanlış Sayısı: \(gkYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
-                            }
-                        } header: {
-                            Text("Genel Kültür")
-                        } footer: {
-                            if gkDogruSayisi + gkYanlisSayisi > 60 {
-                                Text("Toplam doğru ve yanlış sayıları 60'ı geçemez.")
-                                    .foregroundColor(.red)
-                            }
-                        }
-                        
-                        Section {
-                            Text("KPSS Puanı: \(sonuc, specifier: "%.3f")")
-                                .bold()
-                            
-                            Button("Hesapla") {
-                                let gkNet = gkDogruSayisi - (gkYanlisSayisi / 4)
-                                let gyNet = gyDogruSayisi - (gyYanlisSayisi / 4)
-                                
-                                withAnimation {
-                                    sonuc = Constants.ortaogretimPuan + gyNet * Constants.ortaogretimGYKatsayi + gkNet * Constants.ortaogretimGKKatsayi
-                                }
-                                
-                                let result = Result(sinavAdi: "2022 Ortaöğretim KPSS", gyNet: gyNet, gkNet: gkNet, sonuc: sonuc)
-                                modelContext.insert(result)
-                            }
-                        } header: {
-                            Text("Sonuç")
-                        }
-                        
+            
+            Form {
+                
+                Section {
+                    Stepper(value: $gyDogruSayisi, in: 0...60) {
+                        Label("Doğru Sayısı: \(gyDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
                     }
-                    
+                    Stepper(value: $gyYanlisSayisi, in: 0...60) {
+                        Label("Yanlış Sayısı: \(gyYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
+                    }
+                } header: {
+                    Text("Genel Yetenek")
+                } footer: {
+                    if gyDogruSayisi + gyYanlisSayisi > 60 {
+                        Text("Toplam doğru ve yanlış sayıları 60'ı geçemez.")
+                            .foregroundColor(.red)
+                    }
                 }
+                
+                Section {
+                    Stepper(value: $gkDogruSayisi, in: 0...60) {
+                        Label("Doğru Sayısı: \(gkDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
+                    }
+                    Stepper(value: $gkYanlisSayisi, in: 0...60) {
+                        Label("Yanlış Sayısı: \(gkYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
+                    }
+                } header: {
+                    Text("Genel Kültür")
+                } footer: {
+                    if gkDogruSayisi + gkYanlisSayisi > 60 {
+                        Text("Toplam doğru ve yanlış sayıları 60'ı geçemez.")
+                            .foregroundColor(.red)
+                    }
+                }
+                
+                Section {
+                    Text("KPSS Puanı: \(sonuc, specifier: "%.3f")")
+                        .bold()
+                    
+                    Button("Hesapla") {
+                        let gkNet = gkDogruSayisi - (gkYanlisSayisi / 4)
+                        let gyNet = gyDogruSayisi - (gyYanlisSayisi / 4)
+                        
+                        withAnimation {
+                            sonuc = Constants.ortaogretimPuan + gyNet * Constants.ortaogretimGYKatsayi + gkNet * Constants.ortaogretimGKKatsayi
+                        }
+                        
+                        let result = Result(sinavAdi: "2022 Ortaöğretim KPSS", gyNet: gyNet, gkNet: gkNet, sonuc: sonuc)
+                        modelContext.insert(result)
+                    }
+                } header: {
+                    Text("Sonuç")
+                }
+                
+            }
+            
+        }
         .navigationTitle("Ortaöğretim")
         .toolbar(.hidden, for: .tabBar)
     }

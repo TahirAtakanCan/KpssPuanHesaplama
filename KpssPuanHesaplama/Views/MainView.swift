@@ -89,7 +89,7 @@ struct MainView: View {
                         }
                         
                         
-            
+                        
                     } header: {
                         Text("Bölüm Seçiniz")
                             .textCase(.none)

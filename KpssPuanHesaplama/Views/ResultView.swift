@@ -10,8 +10,8 @@ import SwiftData
 
 struct ResultView: View {
     @Environment(\.modelContext) private var modelContext
-        @Query(sort: \Result.tarih, order: .reverse) private var results: [Result]
-        @Binding var selectionTabItem: Int
+    @Query(sort: \Result.tarih, order: .reverse) private var results: [Result]
+    @Binding var selectionTabItem: Int
     
     var body: some View {
         NavigationStack{
