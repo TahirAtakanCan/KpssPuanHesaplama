@@ -44,8 +44,8 @@ final class Constants {
     static let oabt2022EBKatsayi = 0.1498
 
     //MobileADS
-    static let bannerUnitID             = "ca-app-pub-xxx"
-    static let interstitialUnitID       = "ca-app-pub-xxx"
+    static let bannerUnitID             = "ca-app-pub-3024648207134734/9348293515"
+    static let interstitialUnitID       = "ca-app-pub-3024648207134734/8296423536"
     static let bannerUnitIDTest         = "ca-app-pub-3940256099942544/2435281174"
     static let interstitialUnitIDTest   = "ca-app-pub-3940256099942544/4411468910"
 }

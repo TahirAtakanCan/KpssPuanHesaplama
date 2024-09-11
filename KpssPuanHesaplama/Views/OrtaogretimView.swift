@@ -20,6 +20,12 @@ struct OrtaogretimView: View {
     
     @State private var sonuc:Double = 0
     
+    let adCoordinator = AdCoordinator()
+    
+    init() {
+        adCoordinator.loadAd()
+    }
+    
     var body: some View {
         VStack {
             
@@ -69,8 +75,12 @@ struct OrtaogretimView: View {
                             sonuc = Constants.ortaogretimPuan + gyNet * Constants.ortaogretimGYKatsayi + gkNet * Constants.ortaogretimGKKatsayi
                         }
                         
+                        //Swift Data
                         let result = Result(sinavAdi: "2022 Ortaöğretim KPSS", gyNet: gyNet, gkNet: gkNet, sonuc: sonuc)
                         modelContext.insert(result)
+                        
+                        //Admob
+                        adCoordinator.presentAd()
                     }
                 } header: {
                     Text("Sonuç")
