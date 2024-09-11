@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct OABTView: View {
+    
+    @Environment(\.modelContext) private var modelContext
+    
     @State private var gyDogruSayisi:Double = 30
     @State private var gyYanlisSayisi:Double = 0
     
@@ -134,10 +138,7 @@ struct OABTView: View {
                 Section {
                     Picker("Bölüm Seçiniz", selection: $selectedOption) {
                         ForEach(0..<options.count, id: \.self){ index in
-                            HStack {
-                                Image(systemName: "person.circle.fill")
                                 Text(options[index].2)
-                            }
                         }
                     }
                     .onChange(of: selectedOption) {
@@ -170,11 +171,16 @@ struct OABTView: View {
                         sonucOABT2022 = oabtPuan + gyNet * Constants.oabt2022GYKatsayi + gkNet * Constants.oabt2022GKKatsayi + ebNet * Constants.oabt2022GKKatsayi + oabtNet * oabtKatsayi
                         sonuc2023     = Constants.lisans2023Puan + gyNet * Constants.lisans2023GYKatsayi + gkNet * Constants.lisans2023GKKatsayi
                         sonucEB2023   = Constants.eb2023Puan + gyNet * Constants.eb2023GYKatsayi + gkNet * Constants.eb2023GKKatsayi + ebNet * Constants.eb2023Katsayi
+                        
                         isShowingSheet.toggle()
+                        
+                        let result2022OABT = Result(sinavAdi: "2022 ÖABT", gyNet: gyNet, gkNet: gkNet, ebNet: ebNet, oabtNet: oabtNet, sonuc: sonuc2022)
+
+                                                modelContext.insert(result2022OABT)
                         
                     }
                     //.disabled(formKontrol)
-                    .sensoryFeedback(.success, trigger: sonuc2022)
+                    .sensoryFeedback(.success, trigger: sonucOABT2022)
                     .sheet(isPresented: $isShowingSheet) {
                         SonucView(sonuc2022: sonuc2022, sonucEB2022: sonucEB2022, sonucOABT2022: sonucOABT2022, sonuc2023: sonuc2023, sonucEB2023: sonucEB2023, sonucOABT2023: nil)
                     }

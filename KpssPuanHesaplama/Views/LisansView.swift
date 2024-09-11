@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct LisansView: View {
+    
+    @Environment(\.modelContext) private var modelContext
     
     @State private var gyDogruSayisi:Double = 30
     @State private var gyYanlisSayisi:Double = 0
@@ -87,7 +90,10 @@ struct LisansView: View {
                             sonuc2023 = Constants.lisans2023Puan + gyNet * Constants.lisans2023GYKatsayi + gkNet * Constants.lisans2023GKKatsayi
                             sonuc2022 = Constants.lisans2022Puan + gyNet * Constants.lisans2022GYKatsayi + gkNet * Constants.lisans2022GKKatsayi
                         }
-                        
+                        let result2022 = Result(sinavAdi: "2022 Lisans KPSS", gyNet: gyNet, gkNet: gkNet, sonuc: sonuc2022)
+                        let result2023 = Result(sinavAdi: "2023 Lisans KPSS", gyNet: gyNet, gkNet: gkNet, sonuc: sonuc2023)
+                        modelContext.insert(result2022)
+                        modelContext.insert(result2023)
                     }
                     //.disabled(formKontrol)
                     .sensoryFeedback(.success, trigger: sonuc2022)

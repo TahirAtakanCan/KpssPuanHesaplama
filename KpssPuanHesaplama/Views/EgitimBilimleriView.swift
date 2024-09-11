@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct EgitimBilimleriView: View {
+    
+    @Environment(\.modelContext) private var modelContext
     
     @State private var gyDogruSayisi:Double = 30
     @State private var gyYanlisSayisi:Double = 0
@@ -103,6 +106,11 @@ struct EgitimBilimleriView: View {
                             sonuc2023     = Constants.lisans2023Puan + gyNet * Constants.lisans2023GYKatsayi + gkNet * Constants.lisans2023GKKatsayi
                         }
                         isShowingSheet.toggle()
+                        let result2022EB = Result(sinavAdi: "2022 Eğitim Bilimleri", gyNet: gyNet, gkNet: gkNet, ebNet: ebNet, sonuc: sonucEB2022)
+                        let result2023EB = Result(sinavAdi: "2023 Eğitim Bilimleri", gyNet: gyNet, gkNet: gkNet, ebNet: ebNet, sonuc: sonucEB2023)
+                        
+                        modelContext.insert(result2022EB)
+                        modelContext.insert(result2023EB)
                     }
                     //.disabled(formKontrol)
                     .sensoryFeedback(.success, trigger: sonuc2022)

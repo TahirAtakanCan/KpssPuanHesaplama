@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct OnLisansView: View {
+    
+    @Environment(\.modelContext) private var modelContext
     
     @State private var gyDogruSayisi:Double = 30
     @State private var gyYanlisSayisi:Double = 0
@@ -84,6 +87,8 @@ struct OnLisansView: View {
                             sonuc = Constants.onlisansPuan + gyNet * Constants.onlisansGYKatsayi + gkNet * Constants.onlisansGKKatsayi
                         }
                         
+                        let result = Result(sinavAdi: "2022 Önlisans KPSS", gyNet: gyNet, gkNet: gkNet, sonuc: sonuc)
+                        modelContext.insert(result)
                     }
                     //.disabled(formKontrol)
                     .sensoryFeedback(.success, trigger: sonuc)
