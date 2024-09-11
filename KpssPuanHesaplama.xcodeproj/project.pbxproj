@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB3909642C47EE2A009698D2 /* HesaplaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3909632C47EE2A009698D2 /* HesaplaButton.swift */; };
+		FB3E75552C91F470001A1D92 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = FB3E75542C91F470001A1D92 /* GoogleMobileAds */; };
 		FB40C0302C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C02F2C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift */; };
 		FB40C0342C3EAE310040FDF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB40C0332C3EAE310040FDF2 /* Assets.xcassets */; };
 		FB40C0372C3EAE310040FDF2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB40C0362C3EAE310040FDF2 /* Preview Assets.xcassets */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		FB3909632C47EE2A009698D2 /* HesaplaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HesaplaButton.swift; sourceTree = "<group>"; };
+		FB3E75562C91F4B1001A1D92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FB40C02C2C3EAE300040FDF2 /* KpssPuanHesaplama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KpssPuanHesaplama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB40C02F2C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KpssPuanHesaplamaApp.swift; sourceTree = "<group>"; };
 		FB40C0332C3EAE310040FDF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB3E75552C91F470001A1D92 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +85,7 @@
 		FB40C02E2C3EAE300040FDF2 /* KpssPuanHesaplama */ = {
 			isa = PBXGroup;
 			children = (
+				FB3E75562C91F4B1001A1D92 /* Info.plist */,
 				FBA7E2E42C909E8F006B14D3 /* Model */,
 				FB40C0402C3EB3AE0040FDF2 /* Views */,
 				FB40C03F2C3EB39E0040FDF2 /* Resources */,
@@ -156,6 +160,9 @@
 			dependencies = (
 			);
 			name = KpssPuanHesaplama;
+			packageProductDependencies = (
+				FB3E75542C91F470001A1D92 /* GoogleMobileAds */,
+			);
 			productName = KpssPuanHesaplama;
 			productReference = FB40C02C2C3EAE300040FDF2 /* KpssPuanHesaplama.app */;
 			productType = "com.apple.product-type.application";
@@ -184,6 +191,9 @@
 				tr,
 			);
 			mainGroup = FB40C0232C3EAE300040FDF2;
+			packageReferences = (
+				FB3E75532C91F470001A1D92 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = FB40C02D2C3EAE300040FDF2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -359,6 +369,7 @@
 				DEVELOPMENT_TEAM = AAS9DNLG6G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KpssPuanHesaplama/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Puan Hesaplama";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -389,6 +400,7 @@
 				DEVELOPMENT_TEAM = AAS9DNLG6G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KpssPuanHesaplama/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Puan Hesaplama";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -430,6 +442,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FB3E75532C91F470001A1D92 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FB3E75542C91F470001A1D92 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB3E75532C91F470001A1D92 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FB40C0242C3EAE300040FDF2 /* Project object */;
 }
