@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FB03A4F22C92BBBC00679453 /* CalculateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB03A4F12C92BBBC00679453 /* CalculateViewModel.swift */; };
 		FB03A4F52C92C02D00679453 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FB03A4F42C92C02D00679453 /* Lottie */; };
+		FB03A4F72C92C12A00679453 /* Animation - 1726122307615.json in Resources */ = {isa = PBXBuildFile; fileRef = FB03A4F62C92C12A00679453 /* Animation - 1726122307615.json */; };
 		FB37F8392C9203ED006DB066 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB37F8382C9203ED006DB066 /* BannerViewController.swift */; };
 		FB37F83B2C92060B006DB066 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB37F83A2C92060B006DB066 /* BannerView.swift */; };
 		FB3909642C47EE2A009698D2 /* HesaplaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3909632C47EE2A009698D2 /* HesaplaButton.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		FB03A4F12C92BBBC00679453 /* CalculateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewModel.swift; sourceTree = "<group>"; };
+		FB03A4F62C92C12A00679453 /* Animation - 1726122307615.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Animation - 1726122307615.json"; sourceTree = "<group>"; };
 		FB37F8382C9203ED006DB066 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		FB37F83A2C92060B006DB066 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		FB3909632C47EE2A009698D2 /* HesaplaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HesaplaButton.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		FB40C03F2C3EB39E0040FDF2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FB03A4F62C92C12A00679453 /* Animation - 1726122307615.json */,
 				FB40C02F2C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift */,
 				FB40C0332C3EAE310040FDF2 /* Assets.xcassets */,
 			);
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB40C0372C3EAE310040FDF2 /* Preview Assets.xcassets in Resources */,
+				FB03A4F72C92C12A00679453 /* Animation - 1726122307615.json in Resources */,
 				FB40C0342C3EAE310040FDF2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
