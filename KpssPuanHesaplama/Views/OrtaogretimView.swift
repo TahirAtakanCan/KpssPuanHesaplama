@@ -22,6 +22,8 @@ struct OrtaogretimView: View {
     
     let adCoordinator = AdCoordinator()
     
+    @State private var viewModel = CalculateViewModel()
+    
     init() {
         adCoordinator.loadAd()
     }
@@ -80,7 +82,10 @@ struct OrtaogretimView: View {
                         modelContext.insert(result)
                         
                         //Admob
-                        adCoordinator.presentAd()
+                        if viewModel.calculateCount % 15 == 0 {
+                            adCoordinator.presentAd()
+                        }
+                        viewModel.calculateCount += 1
                     }
                 } header: {
                     Text("Sonuç")
