@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB03A4F22C92BBBC00679453 /* CalculateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB03A4F12C92BBBC00679453 /* CalculateViewModel.swift */; };
 		FB37F8392C9203ED006DB066 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB37F8382C9203ED006DB066 /* BannerViewController.swift */; };
 		FB37F83B2C92060B006DB066 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB37F83A2C92060B006DB066 /* BannerView.swift */; };
 		FB3909642C47EE2A009698D2 /* HesaplaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3909632C47EE2A009698D2 /* HesaplaButton.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB03A4F12C92BBBC00679453 /* CalculateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewModel.swift; sourceTree = "<group>"; };
 		FB37F8382C9203ED006DB066 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		FB37F83A2C92060B006DB066 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		FB3909632C47EE2A009698D2 /* HesaplaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HesaplaButton.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB03A4F02C92BB9400679453 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FB03A4F12C92BBBC00679453 /* CalculateViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		FB37F8372C9203C0006DB066 /* Admob */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +115,7 @@
 				FBA7E2E42C909E8F006B14D3 /* Model */,
 				FB40C0402C3EB3AE0040FDF2 /* Views */,
 				FB40C03F2C3EB39E0040FDF2 /* Resources */,
+				FB03A4F02C92BB9400679453 /* ViewModel */,
 				FB40C0352C3EAE310040FDF2 /* Preview Content */,
 			);
 			path = KpssPuanHesaplama;
@@ -240,6 +251,7 @@
 				FB3909642C47EE2A009698D2 /* HesaplaButton.swift in Sources */,
 				FBA7E2E62C909EA0006B14D3 /* Result.swift in Sources */,
 				FB40C04A2C3EC5310040FDF2 /* LisansView.swift in Sources */,
+				FB03A4F22C92BBBC00679453 /* CalculateViewModel.swift in Sources */,
 				FB40C03E2C3EB35E0040FDF2 /* RootView.swift in Sources */,
 				FB40C0462C3EC5180040FDF2 /* OrtaogretimView.swift in Sources */,
 				FB37F83B2C92060B006DB066 /* BannerView.swift in Sources */,
