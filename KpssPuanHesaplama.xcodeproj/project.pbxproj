@@ -10,6 +10,7 @@
 		FB03A4F22C92BBBC00679453 /* CalculateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB03A4F12C92BBBC00679453 /* CalculateViewModel.swift */; };
 		FB03A4F52C92C02D00679453 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FB03A4F42C92C02D00679453 /* Lottie */; };
 		FB03A4F72C92C12A00679453 /* Animation - 1726122307615.json in Resources */ = {isa = PBXBuildFile; fileRef = FB03A4F62C92C12A00679453 /* Animation - 1726122307615.json */; };
+		FB03A4FA2C92DA8300679453 /* UIOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = FB03A4F92C92DA8300679453 /* UIOnboarding */; };
 		FB37F8392C9203ED006DB066 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB37F8382C9203ED006DB066 /* BannerViewController.swift */; };
 		FB37F83B2C92060B006DB066 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB37F83A2C92060B006DB066 /* BannerView.swift */; };
 		FB3909642C47EE2A009698D2 /* HesaplaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3909632C47EE2A009698D2 /* HesaplaButton.swift */; };
@@ -62,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB3E75552C91F470001A1D92 /* GoogleMobileAds in Frameworks */,
+				FB03A4FA2C92DA8300679453 /* UIOnboarding in Frameworks */,
 				FB03A4F52C92C02D00679453 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,6 +198,7 @@
 			packageProductDependencies = (
 				FB3E75542C91F470001A1D92 /* GoogleMobileAds */,
 				FB03A4F42C92C02D00679453 /* Lottie */,
+				FB03A4F92C92DA8300679453 /* UIOnboarding */,
 			);
 			productName = KpssPuanHesaplama;
 			productReference = FB40C02C2C3EAE300040FDF2 /* KpssPuanHesaplama.app */;
@@ -228,6 +231,7 @@
 			packageReferences = (
 				FB3E75532C91F470001A1D92 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 				FB03A4F32C92C02D00679453 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				FB03A4F82C92DA8300679453 /* XCRemoteSwiftPackageReference "UIOnboarding" */,
 			);
 			productRefGroup = FB40C02D2C3EAE300040FDF2 /* Products */;
 			projectDirPath = "";
@@ -494,6 +498,14 @@
 				minimumVersion = 4.5.0;
 			};
 		};
+		FB03A4F82C92DA8300679453 /* XCRemoteSwiftPackageReference "UIOnboarding" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lascic/UIOnboarding.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
 		FB3E75532C91F470001A1D92 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
@@ -509,6 +521,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FB03A4F32C92C02D00679453 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		FB03A4F92C92DA8300679453 /* UIOnboarding */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB03A4F82C92DA8300679453 /* XCRemoteSwiftPackageReference "UIOnboarding" */;
+			productName = UIOnboarding;
 		};
 		FB3E75542C91F470001A1D92 /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -70,22 +70,26 @@ struct ResultView: View {
                     }
                 }
                 .overlay{
-                    if results.isEmpty {
-                        ContentUnavailableView {
-                            Label("Sonuç Bulunamadı", systemImage: "magnifyingglass")
-                        } description: {
-                            VStack {
-                                Text("Henüz sonuç bulunamadı. Puan hesaplamaya başlamak için lütfen başlangıç sekmesini kullanın.")
-                                LottieView(animation: .named("Animation - 1726122307615"))
-                                    .looping()
-                                    .frame(width: 200, height: 200)
-                                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                    GeometryReader { geo in
+                        
+                            if results.isEmpty {
+                                ContentUnavailableView {
+                                    Label("Sonuç Bulunamadı", systemImage: "magnifyingglass")
+                                } description: {
+                                    VStack {
+                                        Text("Henüz sonuç bulunamadı. Puan hesaplamaya başlamak için lütfen başlangıç sekmesini kullanın.")
+                                        LottieView(animation: .named("Animation - 1726122307615"))
+                                            .looping()
+                                            .frame(height: geo.size.height * 0.5 )
+                                            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                                    }
+                                } actions: {
+                                    Button("KPSS Puan Hesaplaması Yap"){
+                                        selectionTabItem = 0
+                                    }
+                                }
+                                
                             }
-                        } actions: {
-                            Button("KPSS Puan Hesaplaması Yap"){
-                                selectionTabItem = 0
-                            }
-                        }
                         
                     }
                 }
