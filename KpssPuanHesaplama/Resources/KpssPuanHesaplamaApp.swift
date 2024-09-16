@@ -8,9 +8,11 @@
 import SwiftUI
 import SwiftData
 import GoogleMobileAds
+import FirebaseCore
 
 @main
 struct KpssPuanHesaplamaApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     init() {
         
@@ -35,4 +37,13 @@ struct KpssPuanHesaplamaApp: App {
         }
         .modelContainer(for: Result.self)
     }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    FirebaseApp.configure()
+
+    return true
+  }
 }
