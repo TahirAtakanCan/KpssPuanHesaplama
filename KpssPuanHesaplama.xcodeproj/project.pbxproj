@@ -30,6 +30,7 @@
 		FB40C04E2C3EC54F0040FDF2 /* OABTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C04D2C3EC54F0040FDF2 /* OABTView.swift */; };
 		FB4E72782C9233F600C3842E /* AddCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4E72772C9233F600C3842E /* AddCoordinator.swift */; };
 		FB5922792C8F3A0100FE92E0 /* SonucView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5922782C8F3A0100FE92E0 /* SonucView.swift */; };
+		FB6EAD3F2CB12789009051D9 /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6EAD3E2CB12789009051D9 /* TargetView.swift */; };
 		FBA7E2E32C90872F006B14D3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA7E2E22C90872F006B14D3 /* Constant.swift */; };
 		FBA7E2E62C909EA0006B14D3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA7E2E52C909EA0006B14D3 /* Result.swift */; };
 		FBC240BF2C98215000EBDBEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBC240BE2C98215000EBDBEA /* GoogleService-Info.plist */; };
@@ -81,6 +82,7 @@
 		FB40C04D2C3EC54F0040FDF2 /* OABTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OABTView.swift; sourceTree = "<group>"; };
 		FB4E72772C9233F600C3842E /* AddCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoordinator.swift; sourceTree = "<group>"; };
 		FB5922782C8F3A0100FE92E0 /* SonucView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonucView.swift; sourceTree = "<group>"; };
+		FB6EAD3E2CB12789009051D9 /* TargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetView.swift; sourceTree = "<group>"; };
 		FBA7E2E22C90872F006B14D3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		FBA7E2E52C909EA0006B14D3 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		FBC240BE2C98215000EBDBEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				FBA7E2E12C908700006B14D3 /* Helpers */,
 				FB3909622C47EDFF009698D2 /* SharedViews */,
 				FB40C03D2C3EB35E0040FDF2 /* RootView.swift */,
+				FB6EAD3E2CB12789009051D9 /* TargetView.swift */,
 				FB40C0412C3EB3DB0040FDF2 /* MainView.swift */,
 				FB40C0432C3EB3E80040FDF2 /* ResultView.swift */,
 				FB40C0452C3EC5180040FDF2 /* OrtaogretimView.swift */,
@@ -353,6 +356,7 @@
 				FB03A4FE2C92DBE000679453 /* UIOnboardingHelper.swift in Sources */,
 				FB40C0422C3EB3DB0040FDF2 /* MainView.swift in Sources */,
 				FB40C0302C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift in Sources */,
+				FB6EAD3F2CB12789009051D9 /* TargetView.swift in Sources */,
 				FB40C0482C3EC5250040FDF2 /* OnLisansView.swift in Sources */,
 				FB40C04C2C3EC5400040FDF2 /* EgitimBilimleriView.swift in Sources */,
 				FB4E72782C9233F600C3842E /* AddCoordinator.swift in Sources */,

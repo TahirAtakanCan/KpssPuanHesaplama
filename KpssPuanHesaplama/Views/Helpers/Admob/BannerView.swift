@@ -63,27 +63,27 @@ struct BannerView: UIViewControllerRepresentable {
         // MARK: - GADBannerViewDelegate methods
 
         func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-          print("\(#function) called")
+          //print("\(#function) called")
         }
 
         func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
-          print("\(#function) called")
+          //print("\(#function) called")
         }
 
         func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
-          print("\(#function) called")
+          //print("\(#function) called")
         }
 
         func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
-          print("\(#function) called")
+          //print("\(#function) called")
         }
 
         func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
-          print("\(#function) called")
+          //print("\(#function) called")
         }
 
         func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
-          print("\(#function) called")
+          //print("\(#function) called")
         }
     }
 }
