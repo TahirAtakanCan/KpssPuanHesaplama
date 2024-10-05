@@ -8,10 +8,19 @@
 import SwiftUI
 
 struct TargetView: View {
-    
+    @State private var targetScore: Double = 70.0
+    @State private var targetDate = Date()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            Section(header: Text("Hedef Puan")) {
+                Slider(value: $targetScore, in: 60...100, step: 0.1)
+                Text("Hedef Puanı: \(targetScore, specifier: "%.1f")")
+            }
+            Section(header: Text("Hedef Tarih")) {
+                DatePicker("Tarih Seçiniz", selection: $targetDate, displayedComponents: .date)
+            }
+        }
     }
 }
 
