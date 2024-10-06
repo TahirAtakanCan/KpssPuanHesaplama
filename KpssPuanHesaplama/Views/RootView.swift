@@ -27,6 +27,12 @@ struct RootView: View {
                         .environment(\.symbolVariants, selectionItem == 1 ? .fill: .none)
                 }
                 .tag(1)
+            TargetView()
+                .tabItem {
+                    Label("Hedefleriniz", systemImage: "target")
+                        .environment(\.symbolVariants, selectionItem == 2 ? .fill: .none)
+                }
+                .tag(2)
         }
         .fullScreenCover(isPresented: $showingOnboarding, content: {
             OnboardingView.init()
