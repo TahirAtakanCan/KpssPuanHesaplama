@@ -33,6 +33,7 @@
 		FB6EAD3F2CB12789009051D9 /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6EAD3E2CB12789009051D9 /* TargetView.swift */; };
 		FB6EAD412CB132C1009051D9 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6EAD402CB132C1009051D9 /* Target.swift */; };
 		FB6EAD452CB27062009051D9 /* KaydetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6EAD442CB27062009051D9 /* KaydetButton.swift */; };
+		FB6EAD472CB27E6C009051D9 /* TargetSaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6EAD462CB27E6C009051D9 /* TargetSaveView.swift */; };
 		FBA7E2E32C90872F006B14D3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA7E2E22C90872F006B14D3 /* Constant.swift */; };
 		FBA7E2E62C909EA0006B14D3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA7E2E52C909EA0006B14D3 /* Result.swift */; };
 		FBC240BF2C98215000EBDBEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBC240BE2C98215000EBDBEA /* GoogleService-Info.plist */; };
@@ -87,6 +88,7 @@
 		FB6EAD3E2CB12789009051D9 /* TargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetView.swift; sourceTree = "<group>"; };
 		FB6EAD402CB132C1009051D9 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		FB6EAD442CB27062009051D9 /* KaydetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaydetButton.swift; sourceTree = "<group>"; };
+		FB6EAD462CB27E6C009051D9 /* TargetSaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetSaveView.swift; sourceTree = "<group>"; };
 		FBA7E2E22C90872F006B14D3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		FBA7E2E52C909EA0006B14D3 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		FBC240BE2C98215000EBDBEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				FB3909622C47EDFF009698D2 /* SharedViews */,
 				FB40C03D2C3EB35E0040FDF2 /* RootView.swift */,
 				FB6EAD3E2CB12789009051D9 /* TargetView.swift */,
+				FB6EAD462CB27E6C009051D9 /* TargetSaveView.swift */,
 				FB40C0412C3EB3DB0040FDF2 /* MainView.swift */,
 				FB40C0432C3EB3E80040FDF2 /* ResultView.swift */,
 				FB40C0452C3EC5180040FDF2 /* OrtaogretimView.swift */,
@@ -361,6 +364,7 @@
 				FB6EAD412CB132C1009051D9 /* Target.swift in Sources */,
 				FB37F8392C9203ED006DB066 /* BannerViewController.swift in Sources */,
 				FB6EAD452CB27062009051D9 /* KaydetButton.swift in Sources */,
+				FB6EAD472CB27E6C009051D9 /* TargetSaveView.swift in Sources */,
 				FB03A4FE2C92DBE000679453 /* UIOnboardingHelper.swift in Sources */,
 				FB40C0422C3EB3DB0040FDF2 /* MainView.swift in Sources */,
 				FB40C0302C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift in Sources */,

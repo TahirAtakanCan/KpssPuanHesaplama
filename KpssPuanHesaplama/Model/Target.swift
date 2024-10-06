@@ -9,10 +9,16 @@ import Foundation
 import SwiftData
 
 
-struct Target: Identifiable{
-    @Attribute(.unique) var id: UUID
-    //let id = UUID()
+@Model
+class TargetModel {
+    var selectedBolum: String
     var targetScore: Double
-    var date: Date
+    var targetDate: Date
     
+    init(selectedBolum: String, targetScore: Double, targetDate: Date) {
+        self.selectedBolum = selectedBolum
+        self.targetScore = targetScore
+        self.targetDate = targetDate
+    }
 }
+
