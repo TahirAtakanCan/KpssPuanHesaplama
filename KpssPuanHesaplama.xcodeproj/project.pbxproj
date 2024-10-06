@@ -32,7 +32,7 @@
 		FB5922792C8F3A0100FE92E0 /* SonucView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5922782C8F3A0100FE92E0 /* SonucView.swift */; };
 		FB6EAD3F2CB12789009051D9 /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6EAD3E2CB12789009051D9 /* TargetView.swift */; };
 		FB6EAD412CB132C1009051D9 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6EAD402CB132C1009051D9 /* Target.swift */; };
-		FB6EAD432CB26FF3009051D9 /* KaydetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6EAD422CB26FF3009051D9 /* KaydetButton.swift */; };
+		FB6EAD452CB27062009051D9 /* KaydetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6EAD442CB27062009051D9 /* KaydetButton.swift */; };
 		FBA7E2E32C90872F006B14D3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA7E2E22C90872F006B14D3 /* Constant.swift */; };
 		FBA7E2E62C909EA0006B14D3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA7E2E52C909EA0006B14D3 /* Result.swift */; };
 		FBC240BF2C98215000EBDBEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBC240BE2C98215000EBDBEA /* GoogleService-Info.plist */; };
@@ -86,7 +86,7 @@
 		FB5922782C8F3A0100FE92E0 /* SonucView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SonucView.swift; sourceTree = "<group>"; };
 		FB6EAD3E2CB12789009051D9 /* TargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetView.swift; sourceTree = "<group>"; };
 		FB6EAD402CB132C1009051D9 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
-		FB6EAD422CB26FF3009051D9 /* KaydetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaydetButton.swift; sourceTree = "<group>"; };
+		FB6EAD442CB27062009051D9 /* KaydetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaydetButton.swift; sourceTree = "<group>"; };
 		FBA7E2E22C90872F006B14D3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		FBA7E2E52C909EA0006B14D3 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		FBC240BE2C98215000EBDBEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 			children = (
 				FB3909632C47EE2A009698D2 /* HesaplaButton.swift */,
 				FB5922782C8F3A0100FE92E0 /* SonucView.swift */,
-				FB6EAD422CB26FF3009051D9 /* KaydetButton.swift */,
+				FB6EAD442CB27062009051D9 /* KaydetButton.swift */,
 			);
 			path = SharedViews;
 			sourceTree = "<group>";
@@ -360,7 +360,7 @@
 				FB40C0442C3EB3E80040FDF2 /* ResultView.swift in Sources */,
 				FB6EAD412CB132C1009051D9 /* Target.swift in Sources */,
 				FB37F8392C9203ED006DB066 /* BannerViewController.swift in Sources */,
-				FB6EAD432CB26FF3009051D9 /* KaydetButton.swift in Sources */,
+				FB6EAD452CB27062009051D9 /* KaydetButton.swift in Sources */,
 				FB03A4FE2C92DBE000679453 /* UIOnboardingHelper.swift in Sources */,
 				FB40C0422C3EB3DB0040FDF2 /* MainView.swift in Sources */,
 				FB40C0302C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift in Sources */,
