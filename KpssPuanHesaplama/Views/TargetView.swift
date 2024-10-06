@@ -6,14 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct TargetView: View {
     @State private var targetScore: Double = 70.0
     @State private var targetDate = Date()
-    
     @State private var selectedBolum = "Ortaöğretim"
     
     let bolumler = ["Ortaöğretim", "On Lisans", "Lisans", "Egitim Bilimleri", "OABT"]
+    
+    @Environment(\.modelContext) private var modelContext
+    @State private var isSaveViewActive = false
     
     var body: some View {
         Form {
@@ -44,12 +47,27 @@ struct TargetView: View {
                     .bold()
                     .foregroundStyle(.main)
             }
-            Section {
-                //KaydetButton(title: "Kaydet")
+            VStack {
+                Section {
+                    KaydetButton(title: "Kaydet", action: {
+                        saveTarget()
+                    })
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
+        .navigationDestination(isPresented: $isSaveViewActive) {
+            TargetSaveView()
+        }
+    }
+        func saveTarget(){
+            let newTarget = TargetModel(selectedBolum: selectedBolum, targetScore: targetScore, targetDate: targetDate)
+            modelContext.insert(newTarget)
+            isSaveViewActive = true
     }
 }
+
+    
 
 #Preview {
     TargetView()
