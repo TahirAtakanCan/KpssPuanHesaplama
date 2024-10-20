@@ -19,7 +19,7 @@ struct KaydetButton: View {
             Label(title, systemImage: "square.and.arrow.down.fill")
                 .font(.title3)
                 .foregroundColor(.white)
-                .frame(minWidth: 30, idealWidth: 30, maxWidth: .nan, idealHeight: 30)
+                .frame(maxWidth: .infinity)  // Daha basit ve çelişkisiz bir frame
         })
         .buttonStyle(.borderedProminent)
         .tint(.main)
@@ -31,3 +31,4 @@ struct KaydetButton: View {
         print("Ilk SwiftUI uygulamam")
     })
 }
+

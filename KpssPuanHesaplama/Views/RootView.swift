@@ -13,39 +13,49 @@ struct RootView: View {
     @AppStorage("$showingOnboarding") private var showingOnboarding = true
     
     var body: some View {
-        TabView(selection: $selectionItem){
-            MainView()
-                .tabItem {
-                    Label("Başlangıç", systemImage: "house")
-                        .environment(\.symbolVariants, selectionItem == 0 ? .fill: .none)
-                }
-                .tag(0)
+        ZStack {
             
-            ResultView(selectionTabItem: $selectionItem)
-                .tabItem {
-                    Label("Hesaplamalar", systemImage: "arrow.counterclockwise.circle")
-                        .environment(\.symbolVariants, selectionItem == 1 ? .fill: .none)
+            if selectionItem != 2 {
+                TabView(selection: $selectionItem) {
+                    MainView()
+                        .tabItem {
+                            Label("Başlangıç", systemImage: "house")
+                        }
+                        .tag(0)
+                    
+                    ResultView(selectionTabItem: $selectionItem)
+                        .tabItem {
+                            Label("Hesaplamalar", systemImage: "arrow.counterclockwise.circle")
+                        }
+                        .tag(1)
+                    
+                    TargetView(selectionTabItem: $selectionItem)
+                        .tabItem {
+                            Label("Hedef", systemImage: "target")
+                        }
+                        .tag(2)
                 }
-                .tag(1)
-            TargetView()
-                .tabItem {
-                    Label("Hedefleriniz", systemImage: "target")
-                        .environment(\.symbolVariants, selectionItem == 2 ? .fill: .none)
-                }
-                .tag(2)
+                .fullScreenCover(isPresented: $showingOnboarding, content: {
+                    OnboardingView()
+                        .ignoresSafeArea(.all)
+                        .onDisappear {
+                            showingOnboarding = false
+                            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in })
+                        }
+                })
+                .tint(.main)
+                .accentColor(.main)
+            }
+            
+            // When TargetView is selected, remove TabBar and show only the content
+            if selectionItem == 2 {
+                TargetView(selectionTabItem: $selectionItem)
+            }
         }
-        .fullScreenCover(isPresented: $showingOnboarding, content: {
-            OnboardingView.init()
-                .ignoresSafeArea(.all)
-                .onDisappear{
-                    showingOnboarding = false
-                    ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in})
-                }
-        })
-        
-        .tint(.main)
     }
 }
+
+
 
 #Preview {
     RootView()
