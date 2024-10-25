@@ -15,7 +15,6 @@ struct RootView: View {
     var body: some View {
         ZStack {
             
-            if selectionItem != 2 {
                 TabView(selection: $selectionItem) {
                     MainView()
                         .tabItem {
@@ -45,12 +44,7 @@ struct RootView: View {
                 })
                 .tint(.main)
                 .accentColor(.main)
-            }
             
-            // When TargetView is selected, remove TabBar and show only the content
-            if selectionItem == 2 {
-                TargetView(selectionTabItem: $selectionItem)
-            }
         }
     }
 }
