@@ -9,11 +9,36 @@ import SwiftUI
 
 struct PastTargetView: View {
     @Binding var selectionTabItem: Int
+    var pastTargets: [TargetModel]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            
+        VStack {
+            List(pastTargets) { target in
+                VStack(alignment: .leading) {
+                    Text("Bölüm: \(target.selectedBolum)")
+                        .bold()
+                    Text("Hedef Puan: \(target.targetScore, specifier: "%.1f")")
+                    Text("Hedef Tarih: \(target.targetDate, formatter: dateFormatter)")
+                }
+                .padding()
+            }
+        }
+        .navigationTitle("Geçmiş Hedefler")
+        }
     }
 }
 
+private let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .medium
+    return formatter
+}()
+
 #Preview {
-    PastTargetView(selectionTabItem: .constant(0))
+    PastTargetView(selectionTabItem: .constant(0), pastTargets: [])
 }
+
+
+

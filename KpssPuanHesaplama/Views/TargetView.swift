@@ -10,6 +10,7 @@ import SwiftData
 
 struct TargetView: View {
     @Binding var selectionTabItem: Int
+    @Binding var pastTargets: [TargetModel]
     @State private var targetScore: Double = 70.0
     @State private var targetDate = Date()
     @State private var selectedBolum = "Ortaöğretim"
@@ -17,11 +18,10 @@ struct TargetView: View {
     let bolumler = ["Ortaöğretim", "On Lisans", "Lisans", "Egitim Bilimleri", "OABT"]
     
     @Environment(\.modelContext) private var modelContext
-    @State private var isSaveViewActive = false
-    @State private var isPastViewActive = false
+    @State private var isSaveViewActive = false  // Kaydetme sonrası PastTargetView'e geçiş için
     
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             VStack {
                 Form {
                     Section(header: Text("Bölüm Seçiniz")) {
@@ -59,21 +59,23 @@ struct TargetView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                     }
                 }
+                .navigationTitle("Hedef Belirleme")
             }
-            .navigationTitle("Hedef Belirleme")
+            //.navigationDestination(isPresented: $isSaveViewActive) {
+            //    PastTargetView(selectionTabItem: $selectionTabItem, pastTargets: pastTargets)
+            //}
         }
-        
     }
     
     func saveTarget() {
         let newTarget = TargetModel(selectedBolum: selectedBolum, targetScore: targetScore, targetDate: targetDate)
-        modelContext.insert(newTarget)
+        pastTargets.append(newTarget)
         isSaveViewActive = true
     }
 }
 
 #Preview {
-    TargetView(selectionTabItem: .constant(0)) // Pass a constant value
+    TargetView(selectionTabItem: .constant(0), pastTargets: .constant([]))
 }
 
 

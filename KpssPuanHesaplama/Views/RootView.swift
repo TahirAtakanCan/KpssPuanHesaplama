@@ -12,6 +12,8 @@ struct RootView: View {
     @State private var selectionItem = 0
     @AppStorage("$showingOnboarding") private var showingOnboarding = true
     
+    @State private var pastTargets: [TargetModel] = []
+    
     var body: some View {
         ZStack {
             
@@ -28,12 +30,12 @@ struct RootView: View {
                         }
                         .tag(1)
                     
-                    TargetView(selectionTabItem: $selectionItem)
+                    TargetView(selectionTabItem: $selectionItem, pastTargets: $pastTargets)
                         .tabItem {
                             Label("Hedef", systemImage: "target")
                         }
                         .tag(2)
-                    PastTargetView(selectionTabItem: $selectionItem)
+                    PastTargetView(selectionTabItem: $selectionItem, pastTargets: pastTargets)
                         .tabItem {
                             Label("Geçmiş Hedefler", systemImage: "arrow.counterclockwise.circle.fill")
                         }
