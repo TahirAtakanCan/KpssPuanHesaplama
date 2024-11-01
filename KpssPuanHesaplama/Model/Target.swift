@@ -10,7 +10,7 @@ import SwiftData
 
 
 @Model
-class TargetModel: Identifiable {
+class Target: Identifiable {
     @Attribute(.unique) var id: UUID
     var selectedBolum: String
     var targetScore: Double

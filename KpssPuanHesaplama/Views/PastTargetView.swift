@@ -10,7 +10,7 @@ import SwiftData
 
 struct PastTargetView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query(sort: \TargetModel.targetDate, order: .reverse) private var pastTargets: [TargetModel]
+    @Query(sort: \Target.targetDate, order: .reverse) private var pastTargets: [Target]
     @Binding var selectionTabItem: Int
     
     var body: some View {
@@ -18,13 +18,25 @@ struct PastTargetView: View {
             VStack {
                 List {
                     ForEach(pastTargets) { target in
-                        VStack(alignment: .leading) {
-                            Text("Bölüm: \(target.selectedBolum)")
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text(target.selectedBolum)
                                 .bold()
-                            Text("Hedef Puan: \(target.targetScore, specifier: "%.1f")")
-                            Text("Hedef Tarih: \(target.targetDate, formatter: dateFormatter)")
+                                .font(.headline)
+                                .foregroundColor(.main)
+                            
+                            HStack {
+                                Text("Hedef Puan:")
+                                Text(String(format: "%.1f", target.targetScore))
+                                    .bold()
+                            }
+                            
+                            HStack {
+                                Text("Hedef Tarih:")
+                                Text(target.targetDate.formatted(date: .long, time: .omitted))
+                                    .italic()
+                            }
                         }
-                        .padding()
+                        .padding(.vertical, 8)
                     }
                     .onDelete { indexSet in
                         for index in indexSet {
@@ -33,7 +45,20 @@ struct PastTargetView: View {
                         do {
                             try modelContext.save()
                         } catch {
-                            print("Hata: \(error.localizedDescription)")
+                            print("Silme hatası: \(error.localizedDescription)")
+                        }
+                    }
+                }
+                .overlay {
+                    if pastTargets.isEmpty {
+                        ContentUnavailableView {
+                            Label("Hedef Bulunamadı", systemImage: "target")
+                        } description: {
+                            Text("Henüz hedef belirlemediniz. Yeni hedef belirlemek için hedef belirleme sekmesini kullanın.")
+                        } actions: {
+                            Button("Hedef Belirle") {
+                                selectionTabItem = 2
+                            }
                         }
                     }
                 }

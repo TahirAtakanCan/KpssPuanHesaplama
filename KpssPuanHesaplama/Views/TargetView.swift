@@ -64,14 +64,22 @@ struct TargetView: View {
     }
     
     func saveTarget() {
-            let newTarget = TargetModel(selectedBolum: selectedBolum, targetScore: targetScore, targetDate: targetDate)
+        // Toplam hedef sayısını kontrol et
+        if let count = try? modelContext.fetch(FetchDescriptor<Target>()).count {
+            // Yeni hedefi oluştur
+            let newTarget = Target(selectedBolum: selectedBolum, targetScore: targetScore, targetDate: targetDate)
             modelContext.insert(newTarget)
             
             do {
                 try modelContext.save()
+                // Kayıt başarılı olduğunda formu temizle
+                selectedBolum = "Ortaöğretim"
+                targetScore = 70.0
+                targetDate = Date()
             } catch {
-                print("Hata: \(error.localizedDescription)")
+                print("Kaydetme hatası: \(error.localizedDescription)")
             }
+        }
     }
 }
 

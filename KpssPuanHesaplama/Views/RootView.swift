@@ -12,7 +12,7 @@ struct RootView: View {
     @State private var selectionItem = 0
     @AppStorage("$showingOnboarding") private var showingOnboarding = true
     
-    @State private var pastTargets: [TargetModel] = []
+    @State private var pastTargets: [Target] = []
     
     var body: some View {
         ZStack {
