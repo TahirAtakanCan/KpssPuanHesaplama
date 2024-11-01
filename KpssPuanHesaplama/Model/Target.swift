@@ -10,12 +10,14 @@ import SwiftData
 
 
 @Model
-class TargetModel {
+class TargetModel: Identifiable {
+    @Attribute(.unique) var id: UUID
     var selectedBolum: String
     var targetScore: Double
     var targetDate: Date
-    
-    init(selectedBolum: String, targetScore: Double, targetDate: Date) {
+
+    init(id: UUID = UUID(), selectedBolum: String, targetScore: Double, targetDate: Date) {
+        self.id = id
         self.selectedBolum = selectedBolum
         self.targetScore = targetScore
         self.targetDate = targetDate

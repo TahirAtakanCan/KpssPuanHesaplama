@@ -10,7 +10,6 @@ import SwiftData
 
 struct TargetView: View {
     @Binding var selectionTabItem: Int
-    @Binding var pastTargets: [TargetModel]
     @State private var targetScore: Double = 70.0
     @State private var targetDate = Date()
     @State private var selectedBolum = "Ortaöğretim"
@@ -18,7 +17,6 @@ struct TargetView: View {
     let bolumler = ["Ortaöğretim", "On Lisans", "Lisans", "Egitim Bilimleri", "OABT"]
     
     @Environment(\.modelContext) private var modelContext
-    @State private var isSaveViewActive = false  // Kaydetme sonrası PastTargetView'e geçiş için
     
     var body: some View {
         NavigationStack {
@@ -54,6 +52,7 @@ struct TargetView: View {
                     
                     Section {
                         KaydetButton(title: "Kaydet", action: {
+                            print("Butona basıldı")
                             saveTarget()
                         })
                         .frame(maxWidth: .infinity, alignment: .center)
@@ -61,21 +60,23 @@ struct TargetView: View {
                 }
                 .navigationTitle("Hedef Belirleme")
             }
-            //.navigationDestination(isPresented: $isSaveViewActive) {
-            //    PastTargetView(selectionTabItem: $selectionTabItem, pastTargets: pastTargets)
-            //}
         }
     }
     
     func saveTarget() {
-        let newTarget = TargetModel(selectedBolum: selectedBolum, targetScore: targetScore, targetDate: targetDate)
-        pastTargets.append(newTarget)
-        isSaveViewActive = true
+            let newTarget = TargetModel(selectedBolum: selectedBolum, targetScore: targetScore, targetDate: targetDate)
+            modelContext.insert(newTarget)
+            
+            do {
+                try modelContext.save()
+            } catch {
+                print("Hata: \(error.localizedDescription)")
+            }
     }
 }
 
 #Preview {
-    TargetView(selectionTabItem: .constant(0), pastTargets: .constant([]))
+    TargetView(selectionTabItem: .constant(0))
 }
 
 

@@ -6,26 +6,42 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PastTargetView: View {
+    @Environment(\.modelContext) private var modelContext
+    @Query(sort: \TargetModel.targetDate, order: .reverse) private var pastTargets: [TargetModel]
     @Binding var selectionTabItem: Int
-    var pastTargets: [TargetModel]
     
     var body: some View {
-        NavigationStack{
-            
-        VStack {
-            List(pastTargets) { target in
-                VStack(alignment: .leading) {
-                    Text("Bölüm: \(target.selectedBolum)")
-                        .bold()
-                    Text("Hedef Puan: \(target.targetScore, specifier: "%.1f")")
-                    Text("Hedef Tarih: \(target.targetDate, formatter: dateFormatter)")
+        NavigationStack {
+            VStack {
+                List {
+                    ForEach(pastTargets) { target in
+                        VStack(alignment: .leading) {
+                            Text("Bölüm: \(target.selectedBolum)")
+                                .bold()
+                            Text("Hedef Puan: \(target.targetScore, specifier: "%.1f")")
+                            Text("Hedef Tarih: \(target.targetDate, formatter: dateFormatter)")
+                        }
+                        .padding()
+                    }
+                    .onDelete { indexSet in
+                        for index in indexSet {
+                            modelContext.delete(pastTargets[index])
+                        }
+                        do {
+                            try modelContext.save()
+                        } catch {
+                            print("Hata: \(error.localizedDescription)")
+                        }
+                    }
                 }
-                .padding()
             }
-        }
-        .navigationTitle("Geçmiş Hedefler")
+            .navigationTitle("Geçmiş Hedefler")
+            .toolbar {
+                EditButton()
+            }
         }
     }
 }
@@ -37,7 +53,7 @@ private let dateFormatter: DateFormatter = {
 }()
 
 #Preview {
-    PastTargetView(selectionTabItem: .constant(0), pastTargets: [])
+    PastTargetView(selectionTabItem: .constant(1))
 }
 
 

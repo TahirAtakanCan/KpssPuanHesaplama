@@ -30,12 +30,12 @@ struct RootView: View {
                         }
                         .tag(1)
                     
-                    TargetView(selectionTabItem: $selectionItem, pastTargets: $pastTargets)
+                    TargetView(selectionTabItem: $selectionItem)
                         .tabItem {
                             Label("Hedef", systemImage: "target")
                         }
                         .tag(2)
-                    PastTargetView(selectionTabItem: $selectionItem, pastTargets: pastTargets)
+                    PastTargetView(selectionTabItem: $selectionItem)
                         .tabItem {
                             Label("Geçmiş Hedefler", systemImage: "arrow.counterclockwise.circle.fill")
                         }
