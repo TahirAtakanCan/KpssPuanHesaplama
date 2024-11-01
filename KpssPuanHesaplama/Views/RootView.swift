@@ -33,6 +33,11 @@ struct RootView: View {
                             Label("Hedef", systemImage: "target")
                         }
                         .tag(2)
+                    PastTargetView(selectionTabItem: $selectionItem)
+                        .tabItem {
+                            Label("Geçmiş Hedefler", systemImage: "arrow.counterclockwise.circle.fill")
+                        }
+                        .tag(3)
                 }
                 .fullScreenCover(isPresented: $showingOnboarding, content: {
                     OnboardingView()
