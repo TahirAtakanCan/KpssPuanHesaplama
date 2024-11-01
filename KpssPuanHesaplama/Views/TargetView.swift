@@ -21,44 +21,48 @@ struct TargetView: View {
     @State private var isPastViewActive = false
     
     var body: some View {
-        VStack {
-            Form {
-                Section(header: Text("Bölüm Seçiniz")) {
-                    Picker("Bölüm Seçiniz", selection: $selectedBolum) {
-                        ForEach(bolumler, id: \.self) {
-                            Text($0).foregroundStyle(.main).bold()
+        NavigationStack{
+            VStack {
+                Form {
+                    Section(header: Text("Bölüm Seçiniz")) {
+                        Picker("Bölüm Seçiniz", selection: $selectedBolum) {
+                            ForEach(bolumler, id: \.self) {
+                                Text($0).foregroundStyle(.main).bold()
+                            }
                         }
+                        .pickerStyle(.menu)
+                        .foregroundStyle(.main).bold()
+                        
+                        Text("Seçilen Bölüm: \(selectedBolum)")
+                            .bold()
+                            .foregroundStyle(.main)
                     }
-                    .pickerStyle(.menu)
-                    .foregroundStyle(.main).bold()
                     
-                    Text("Seçilen Bölüm: \(selectedBolum)")
-                        .bold()
-                        .foregroundStyle(.main)
-                }
-                
-                Section(header: Text("Hedef Puan")) {
-                    Slider(value: $targetScore, in: 60...100, step: 0.1)
-                        .accentColor(.main)
-                    Text("Hedef Puanı: \(targetScore, specifier: "%.1f")")
-                        .bold()
-                        .foregroundStyle(.main)
-                }
-                
-                Section(header: Text("Hedef Tarih")) {
-                    DatePicker("Tarih Seçiniz", selection: $targetDate, displayedComponents: .date)
-                        .bold()
-                        .foregroundStyle(.main)
-                }
-                
-                Section {
-                    KaydetButton(title: "Kaydet", action: {
-                        saveTarget()
-                    })
-                    .frame(maxWidth: .infinity, alignment: .center)
+                    Section(header: Text("Hedef Puan")) {
+                        Slider(value: $targetScore, in: 60...100, step: 0.1)
+                            .accentColor(.main)
+                        Text("Hedef Puanı: \(targetScore, specifier: "%.1f")")
+                            .bold()
+                            .foregroundStyle(.main)
+                    }
+                    
+                    Section(header: Text("Hedef Tarih")) {
+                        DatePicker("Tarih Seçiniz", selection: $targetDate, displayedComponents: .date)
+                            .bold()
+                            .foregroundStyle(.main)
+                    }
+                    
+                    Section {
+                        KaydetButton(title: "Kaydet", action: {
+                            saveTarget()
+                        })
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    }
                 }
             }
+            .navigationTitle("Hedef Belirleme")
         }
+        
     }
     
     func saveTarget() {
