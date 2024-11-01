@@ -76,11 +76,15 @@ struct TargetView: View {
                 selectedBolum = "Ortaöğretim"
                 targetScore = 70.0
                 targetDate = Date()
+                
+                // Başarıyla kaydedildikten sonra Geçmiş Hedefler ekranına geç
+                selectionTabItem = 3 // `PastTargetView`'in tab indeksi olarak ayarlayın
             } catch {
                 print("Kaydetme hatası: \(error.localizedDescription)")
             }
         }
     }
+
 }
 
 #Preview {
