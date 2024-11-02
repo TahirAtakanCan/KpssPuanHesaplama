@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct TargetView: View {
     @Binding var selectionTabItem: Int
@@ -15,8 +14,6 @@ struct TargetView: View {
     @State private var selectedBolum = "Ortaöğretim"
     
     let bolumler = ["Ortaöğretim", "On Lisans", "Lisans", "Egitim Bilimleri", "OABT"]
-    
-    @Environment(\.modelContext) private var modelContext
     
     var body: some View {
         NavigationStack {
@@ -64,21 +61,24 @@ struct TargetView: View {
     }
     
     func saveTarget() {
-        let newTarget = Target(selectedBolum: selectedBolum, targetScore: targetScore, targetDate: targetDate)
-        modelContext.insert(newTarget)
+        let newTarget = Target(id: UUID(), selectedBolum: selectedBolum, targetScore: targetScore, targetDate: targetDate)
         
-        do {
-            try modelContext.save()
-            print("Hedef başarıyla kaydedildi.")
-            
-            selectedBolum = "Ortaöğretim"
-            targetScore = 70.0
-            targetDate = Date()
-            
-            selectionTabItem = 3
-        } catch {
-            print("Kaydetme hatası: \(error.localizedDescription)")
+        var targets = loadTargets()
+        targets.append(newTarget)
+        
+        if let encoded = try? JSONEncoder().encode(targets) {
+            UserDefaults.standard.set(encoded, forKey: "targets")
         }
+        
+        selectionTabItem = 3
+    }
+    
+    func loadTargets() -> [Target] {
+        if let data = UserDefaults.standard.data(forKey: "targets"),
+           let targets = try? JSONDecoder().decode([Target].self, from: data) {
+            return targets
+        }
+        return []
     }
 }
 

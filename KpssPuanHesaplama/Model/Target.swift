@@ -6,21 +6,11 @@
 //
 
 import Foundation
-import SwiftData
 
-
-@Model
-class Target: Identifiable {
-    @Attribute(.unique) var id: UUID
+struct Target: Identifiable, Codable {
+    var id: UUID
     var selectedBolum: String
     var targetScore: Double
     var targetDate: Date
-
-    init(id: UUID = UUID(), selectedBolum: String, targetScore: Double, targetDate: Date) {
-        self.id = id
-        self.selectedBolum = selectedBolum
-        self.targetScore = targetScore
-        self.targetDate = targetDate
-    }
 }
 

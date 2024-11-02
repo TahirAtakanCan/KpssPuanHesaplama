@@ -6,12 +6,10 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct PastTargetView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query(sort: \Target.targetDate, order: .reverse) private var pastTargets: [Target]
     @Binding var selectionTabItem: Int
+    @State private var pastTargets: [Target] = []
     
     var body: some View {
         NavigationStack {
@@ -22,7 +20,6 @@ struct PastTargetView: View {
                             Text(target.selectedBolum)
                                 .bold()
                                 .font(.headline)
-                                .foregroundColor(.main)
                             
                             HStack {
                                 Text("Hedef Puan:")
@@ -39,15 +36,12 @@ struct PastTargetView: View {
                         .padding(.vertical, 8)
                     }
                     .onDelete { indexSet in
-                        for index in indexSet {
-                            modelContext.delete(pastTargets[index])
-                        }
-                        do {
-                            try modelContext.save()
-                        } catch {
-                            print("Silme hatası: \(error.localizedDescription)")
-                        }
+                        pastTargets.remove(atOffsets: indexSet)
+                        saveTargets()
                     }
+                }
+                .onAppear {
+                    pastTargets = loadTargets()
                 }
                 .overlay {
                     if pastTargets.isEmpty {
@@ -69,16 +63,20 @@ struct PastTargetView: View {
             }
         }
     }
-}
-
-private let dateFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .medium
-    return formatter
-}()
-
-#Preview {
-    PastTargetView(selectionTabItem: .constant(1))
+    
+    func saveTargets() {
+        if let encoded = try? JSONEncoder().encode(pastTargets) {
+            UserDefaults.standard.set(encoded, forKey: "targets")
+        }
+    }
+    
+    func loadTargets() -> [Target] {
+        if let data = UserDefaults.standard.data(forKey: "targets"),
+           let targets = try? JSONDecoder().decode([Target].self, from: data) {
+            return targets
+        }
+        return []
+    }
 }
 
 
