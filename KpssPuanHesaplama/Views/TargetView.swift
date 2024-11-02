@@ -64,31 +64,22 @@ struct TargetView: View {
     }
     
     func saveTarget() {
-        // Toplam hedef sayısını kontrol et
-        if let count = try? modelContext.fetch(FetchDescriptor<Target>()).count {
-            // Yeni hedefi oluştur
-            let newTarget = Target(selectedBolum: selectedBolum, targetScore: targetScore, targetDate: targetDate)
-            modelContext.insert(newTarget)
+        let newTarget = Target(selectedBolum: selectedBolum, targetScore: targetScore, targetDate: targetDate)
+        modelContext.insert(newTarget)
+        
+        do {
+            try modelContext.save()
+            print("Hedef başarıyla kaydedildi.")
             
-            do {
-                try modelContext.save()
-                // Kayıt başarılı olduğunda formu temizle
-                selectedBolum = "Ortaöğretim"
-                targetScore = 70.0
-                targetDate = Date()
-                
-                // Başarıyla kaydedildikten sonra Geçmiş Hedefler ekranına geç
-                selectionTabItem = 3 // `PastTargetView`'in tab indeksi olarak ayarlayın
-            } catch {
-                print("Kaydetme hatası: \(error.localizedDescription)")
-            }
+            selectedBolum = "Ortaöğretim"
+            targetScore = 70.0
+            targetDate = Date()
+            
+            selectionTabItem = 3
+        } catch {
+            print("Kaydetme hatası: \(error.localizedDescription)")
         }
     }
-
-}
-
-#Preview {
-    TargetView(selectionTabItem: .constant(0))
 }
 
 
