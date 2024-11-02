@@ -83,6 +83,10 @@ struct TargetView: View {
 }
 
 
+#Preview {
+    TargetView(selectionTabItem: .constant(2))
+}
+
 
 
 

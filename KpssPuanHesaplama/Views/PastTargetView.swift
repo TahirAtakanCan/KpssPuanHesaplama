@@ -80,4 +80,9 @@ struct PastTargetView: View {
 }
 
 
+#Preview {
+    PastTargetView(selectionTabItem: .constant(3))
+}
+
+
 
