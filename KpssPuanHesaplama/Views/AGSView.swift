@@ -185,7 +185,7 @@ struct AGSView: View {
                     .font(.headline)
             }
         }
-        .navigationTitle("AGS Hesaplama")
+        .navigationTitle("AGS")
     }
     
     func hesaplaAGSPuani() {
