@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AGSView: View {
+    @Environment(\.modelContext) private var modelContext
     @State private var sozelYetenek = ""
     @State private var sayisalYetenek = ""
     @State private var tarih = ""
@@ -15,7 +16,7 @@ struct AGSView: View {
     @State private var mevzuat = ""
     @State private var egitimTemelleri = ""
     @State private var sonuc = 0.0
-    
+    @State private var isShowingSheet = false
     
     var body: some View {
         
@@ -36,8 +37,17 @@ struct AGSView: View {
                     }
                     
                     Section {
-                        Button("Hesapla") {
-                            HesaplaButton()
+                        HesaplaButton(title: "Hesapla") {
+                            hesaplaAGSPuani()
+                        }
+                        .sensoryFeedback(.success, trigger: sonuc)
+                        .sheet(isPresented: $isShowingSheet) {
+                            SonucView(sonuc2022: sonuc, 
+                                      sonucEB2022: 0.0, 
+                                      sonucOABT2022: 0.0, 
+                                      sonuc2023: 0.0, 
+                                      sonucEB2023: 0.0, 
+                                      sonucOABT2023: 0.0)
                         }
                     }
                     
@@ -49,17 +59,26 @@ struct AGSView: View {
                 .navigationTitle("AGS Hesaplama")
             }
             
-    func HesaplaButton() {
-                let sozel = Double(sozelYetenek) ?? 0
-                let sayisal = Double(sayisalYetenek) ?? 0
-                let tarihPuan = Double(tarih) ?? 0
-                let cografya = Double(turkiyeCografyasi) ?? 0
-                let mevzuatPuan = Double(mevzuat) ?? 0
-                let egitim = Double(egitimTemelleri) ?? 0
-                
-                let toplamDogru = sozel + sayisal + tarihPuan + cografya + mevzuatPuan + egitim
-                sonuc = (toplamDogru / AGSConstants.toplamSoru) * 100
+    func hesaplaAGSPuani() {
+        let sozel = Double(sozelYetenek) ?? 0
+        let sayisal = Double(sayisalYetenek) ?? 0
+        let tarihPuan = Double(tarih) ?? 0
+        let cografya = Double(turkiyeCografyasi) ?? 0
+        let mevzuatPuan = Double(mevzuat) ?? 0
+        let egitim = Double(egitimTemelleri) ?? 0
         
+        let toplamDogru = sozel + sayisal + tarihPuan + cografya + mevzuatPuan + egitim
+        sonuc = (toplamDogru / AGSConstants.toplamSoru) * 100
+        
+        let resultAGS = Result(sinavAdi: "2025 AGS", 
+                             gyNet: sozel, 
+                             gkNet: sayisal, 
+                             ebNet: egitim, 
+                             oabtNet: nil, 
+                             sonuc: sonuc)
+        
+        modelContext.insert(resultAGS)
+        isShowingSheet.toggle()
     }
 }
 

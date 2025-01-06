@@ -45,7 +45,7 @@ struct OABTView: View {
         (0.3817,41.604, "Fizik"),
         (0.5225,36.309, "İlköğretim Matematik"),
         (0.3883,37.962, "İmam Hatip Meslek Dersleri Ö."),
-        (0.3791,40.920, "İngilizce"),
+        //(0.3791,40.920, "İngilizce"),
         (0.4542,42.157, "Kimya"),
         (0.4247,41.759, "Lise Matematik"),
         (0.4944,33.292, "Okul Öncesi"),
@@ -146,66 +146,69 @@ struct OABTView: View {
                         TextField("YDS Puanı", text: $ydsPuani)
                             .keyboardType(.decimalPad)
                     }
-                } else {
-                    Section {
-                        Picker("Bölüm Seçiniz", selection: $selectedOption) {
-                            ForEach(0..<options.count, id: \.self){ index in
-                                    Text(options[index].2)
-                            }
+                }
+                
+                Section {
+                    Picker("Bölüm Seçiniz", selection: $selectedOption) {
+                        ForEach(0..<options.count, id: \.self) { index in
+                            Text(options[index].2)
                         }
-                        .onChange(of: selectedOption) {
-                            oabtKatsayi = options[selectedOption].0
-                            oabtPuan = options[selectedOption].1
-                        }
-                        
+                    }
+                    .onChange(of: selectedOption) {
+                        oabtKatsayi = options[selectedOption].0
+                        oabtPuan = options[selectedOption].1
+                    }
+                    
+                    if !isYabanciDil {
                         Stepper(value: $oabtDogruSayisi, in: 0...(75 - oabtYanlisSayisi)) {
                             Label("Doğru Sayısı: \(oabtDogruSayisi, specifier: "%.0f")", systemImage: "checkmark.circle")
                         }
-                        .sensoryFeedback(.selection, trigger: oabtDogruSayisi)
-                        .bold()
                         
                         Stepper(value: $oabtYanlisSayisi, in: 0...(75 - oabtDogruSayisi)) {
                             Label("Yanlış Sayısı: \(oabtYanlisSayisi, specifier: "%.0f")", systemImage: "xmark.circle")
                         }
-                        .sensoryFeedback(.selection, trigger: oabtYanlisSayisi)
-                        .bold()
+                    }
+                    
+                    HesaplaButton(title: "Hesapla") {
+                        let gkNet = gkDogruSayisi - (gkYanlisSayisi / 4)
+                        let gyNet = gyDogruSayisi - (gyYanlisSayisi / 4)
+                        let ebNet = ebDogruSayisi - (ebYanlisSayisi / 4)
                         
-                        
-                        HesaplaButton(title: "Hesapla") {
+                        if isYabanciDil {
+                            let ydsPuaniDouble = Double(ydsPuani) ?? 0
+                            sonucOABT2022 = ydsPuaniDouble * AGSConstants.ydsPuanKatsayisi
                             
-                            let gkNet = gkDogruSayisi - (gkYanlisSayisi / 4)
-                            let gyNet = gyDogruSayisi - (gyYanlisSayisi / 4)
-                            let ebNet = ebDogruSayisi - (ebYanlisSayisi / 4)
+                            let resultYDS = Result(sinavAdi: "2025 YDS", 
+                                                 gyNet: gyNet, 
+                                                 gkNet: gkNet, 
+                                                 ebNet: ebNet, 
+                                                 oabtNet: ydsPuaniDouble, 
+                                                 sonuc: sonucOABT2022)
+                            
+                            modelContext.insert(resultYDS)
+                        } else {
                             let oabtNet = oabtDogruSayisi - (oabtYanlisSayisi / 4)
-                            
-                            sonuc2022     = Constants.lisans2022Puan + gyNet * Constants.lisans2022GYKatsayi + gkNet * Constants.lisans2022GKKatsayi
-                            sonucEB2022   = Constants.eb2022Puan + gyNet * Constants.eb2022GYKatsayi + gkNet * Constants.eb2022GKKatsayi + ebNet * Constants.eb2022Katsayi
                             sonucOABT2022 = oabtPuan + gyNet * Constants.oabt2022GYKatsayi + gkNet * Constants.oabt2022GKKatsayi + ebNet * Constants.oabt2022GKKatsayi + oabtNet * oabtKatsayi
-                            sonuc2023     = Constants.lisans2023Puan + gyNet * Constants.lisans2023GYKatsayi + gkNet * Constants.lisans2023GKKatsayi
-                            sonucEB2023   = Constants.eb2023Puan + gyNet * Constants.eb2023GYKatsayi + gkNet * Constants.eb2023GKKatsayi + ebNet * Constants.eb2023Katsayi
                             
-                            isShowingSheet.toggle()
+                            let resultOABT = Result(sinavAdi: "2025 ÖABT", 
+                                                  gyNet: gyNet, 
+                                                  gkNet: gkNet, 
+                                                  ebNet: ebNet, 
+                                                  oabtNet: oabtNet, 
+                                                  sonuc: sonucOABT2022)
                             
-                            let result2022OABT = Result(sinavAdi: "2022 ÖABT", gyNet: gyNet, gkNet: gkNet, ebNet: ebNet, oabtNet: oabtNet, sonuc: sonuc2022)
-
-                                                modelContext.insert(result2022OABT)
-                            
-                        }
-                        //.disabled(formKontrol)
-                        .sensoryFeedback(.success, trigger: sonucOABT2022)
-                        .sheet(isPresented: $isShowingSheet) {
-                            SonucView(sonuc2022: sonuc2022, sonucEB2022: sonucEB2022, sonucOABT2022: sonucOABT2022, sonuc2023: sonuc2023, sonucEB2023: sonucEB2023, sonucOABT2023: nil)
+                            modelContext.insert(resultOABT)
                         }
                         
-                    } header: {
-                        Text("ÖABT")
-                            .textCase(.none)
-                            .foregroundStyle(.main)
-                    } footer: {
-                        if(ebDogruSayisi + ebYanlisSayisi > 75) {
-                            Text("Toplam doğru ve yanlış sayıları 75'i geçemez.")
-                                .foregroundStyle(.red)
-                        }
+                        isShowingSheet.toggle()
+                    }
+                    .sheet(isPresented: $isShowingSheet) {
+                        SonucView(sonuc2022: sonuc2022, 
+                                 sonucEB2022: sonucEB2022, 
+                                 sonucOABT2022: sonucOABT2022, 
+                                 sonuc2023: sonuc2023, 
+                                 sonucEB2023: sonucEB2023, 
+                                 sonucOABT2023: nil)
                     }
                 }
             }
