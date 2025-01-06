@@ -18,6 +18,7 @@
 		FB3909642C47EE2A009698D2 /* HesaplaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3909632C47EE2A009698D2 /* HesaplaButton.swift */; };
 		FB3E75552C91F470001A1D92 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = FB3E75542C91F470001A1D92 /* GoogleMobileAds */; };
 		FB4096672D2BE0AA002F2E34 /* AGSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4096662D2BE0AA002F2E34 /* AGSView.swift */; };
+		FB4096692D2BFA1A002F2E34 /* AGSConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4096682D2BFA1A002F2E34 /* AGSConstants.swift */; };
 		FB40C0302C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C02F2C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift */; };
 		FB40C0342C3EAE310040FDF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB40C0332C3EAE310040FDF2 /* Assets.xcassets */; };
 		FB40C0372C3EAE310040FDF2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB40C0362C3EAE310040FDF2 /* Preview Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		FB3909632C47EE2A009698D2 /* HesaplaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HesaplaButton.swift; sourceTree = "<group>"; };
 		FB3E75562C91F4B1001A1D92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FB4096662D2BE0AA002F2E34 /* AGSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSView.swift; sourceTree = "<group>"; };
+		FB4096682D2BFA1A002F2E34 /* AGSConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSConstants.swift; sourceTree = "<group>"; };
 		FB40C02C2C3EAE300040FDF2 /* KpssPuanHesaplama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KpssPuanHesaplama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB40C02F2C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KpssPuanHesaplamaApp.swift; sourceTree = "<group>"; };
 		FB40C0332C3EAE310040FDF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				FBA7E2E22C90872F006B14D3 /* Constant.swift */,
 				FB03A4FB2C92DB7600679453 /* OnboardingView.swift */,
 				FB03A4FD2C92DBE000679453 /* UIOnboardingHelper.swift */,
+				FB4096682D2BFA1A002F2E34 /* AGSConstants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB3909642C47EE2A009698D2 /* HesaplaButton.swift in Sources */,
+				FB4096692D2BFA1A002F2E34 /* AGSConstants.swift in Sources */,
 				FB6EAD492CB29446009051D9 /* PastTargetView.swift in Sources */,
 				FBA7E2E62C909EA0006B14D3 /* Result.swift in Sources */,
 				FB40C04A2C3EC5310040FDF2 /* LisansView.swift in Sources */,
