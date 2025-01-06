@@ -42,7 +42,7 @@ struct TargetView: View {
                     }
                     
                     Section(header: Text("Hedef Tarih")) {
-                        DatePicker("Tarih Seçiniz", selection: $targetDate, displayedComponents: .date)
+                        DatePicker("Tarih Seçiniz", selection: $targetDate, in: Date()..., displayedComponents: .date)
                             .bold()
                             .foregroundStyle(.main)
                     }
