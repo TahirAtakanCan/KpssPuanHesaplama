@@ -17,6 +17,7 @@
 		FB37F83B2C92060B006DB066 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB37F83A2C92060B006DB066 /* BannerView.swift */; };
 		FB3909642C47EE2A009698D2 /* HesaplaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3909632C47EE2A009698D2 /* HesaplaButton.swift */; };
 		FB3E75552C91F470001A1D92 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = FB3E75542C91F470001A1D92 /* GoogleMobileAds */; };
+		FB4096672D2BE0AA002F2E34 /* AGSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4096662D2BE0AA002F2E34 /* AGSView.swift */; };
 		FB40C0302C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40C02F2C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift */; };
 		FB40C0342C3EAE310040FDF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB40C0332C3EAE310040FDF2 /* Assets.xcassets */; };
 		FB40C0372C3EAE310040FDF2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB40C0362C3EAE310040FDF2 /* Preview Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		FB37F83A2C92060B006DB066 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		FB3909632C47EE2A009698D2 /* HesaplaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HesaplaButton.swift; sourceTree = "<group>"; };
 		FB3E75562C91F4B1001A1D92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FB4096662D2BE0AA002F2E34 /* AGSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSView.swift; sourceTree = "<group>"; };
 		FB40C02C2C3EAE300040FDF2 /* KpssPuanHesaplama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KpssPuanHesaplama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB40C02F2C3EAE300040FDF2 /* KpssPuanHesaplamaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KpssPuanHesaplamaApp.swift; sourceTree = "<group>"; };
 		FB40C0332C3EAE310040FDF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				FBA7E2E12C908700006B14D3 /* Helpers */,
 				FB3909622C47EDFF009698D2 /* SharedViews */,
 				FB40C03D2C3EB35E0040FDF2 /* RootView.swift */,
+				FB4096662D2BE0AA002F2E34 /* AGSView.swift */,
 				FB6EAD3E2CB12789009051D9 /* TargetView.swift */,
 				FB6EAD462CB27E6C009051D9 /* TargetSaveView.swift */,
 				FB6EAD482CB29446009051D9 /* PastTargetView.swift */,
@@ -365,6 +368,7 @@
 				FB40C0462C3EC5180040FDF2 /* OrtaogretimView.swift in Sources */,
 				FB37F83B2C92060B006DB066 /* BannerView.swift in Sources */,
 				FB40C0442C3EB3E80040FDF2 /* ResultView.swift in Sources */,
+				FB4096672D2BE0AA002F2E34 /* AGSView.swift in Sources */,
 				FB6EAD412CB132C1009051D9 /* Target.swift in Sources */,
 				FB37F8392C9203ED006DB066 /* BannerViewController.swift in Sources */,
 				FB6EAD452CB27062009051D9 /* KaydetButton.swift in Sources */,
@@ -528,7 +532,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tahiratakancan.KpssPuanHesaplama;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -561,7 +565,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tahiratakancan.KpssPuanHesaplama;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

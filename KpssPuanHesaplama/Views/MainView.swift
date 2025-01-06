@@ -88,6 +88,20 @@ struct MainView: View {
                                     )
                             }
                         }
+                        NavigationLink(destination: AGSView()){
+                            HStack{
+                                Image(systemName: "6.circle")
+                                    .resizable()
+                                    .foregroundStyle(.main)
+                                    .frame(width: 40, height: 40)
+                                
+                                Text("AGS")
+                                    .badge(
+                                        Text("P12")
+                                            .italic()
+                                    )
+                            }
+                        }
                         
                         
                         
